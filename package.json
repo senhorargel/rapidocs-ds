@@ -1,0 +1,13 @@
+{
+  "name": "rapidocs-ds",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Design System multiplataforma do Rapidocs — tokens de fundacao, componentes Angular e Flutter",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "build:tokens": "pnpm --filter @rapidocs/tokens build",
+    "storybook": "pnpm --filter storybook storybook",
+    "build:storybook": "pnpm --filter storybook build-storybook"
+  }
+}

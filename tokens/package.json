@@ -1,0 +1,21 @@
+{
+  "name": "@rapidocs/tokens",
+  "version": "0.0.1",
+  "description": "Tokens de fundacao do Design System Rapidocs",
+  "license": "MIT",
+  "files": [
+    "build",
+    "src"
+  ],
+  "exports": {
+    "./css": "./build/web/tokens.css",
+    "./scss": "./build/web/tokens.scss",
+    "./dart": "./build/dart/tokens.dart"
+  },
+  "scripts": {
+    "build": "style-dictionary build --config ./style-dictionary.config.mjs"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.3.0"
+  }
+}

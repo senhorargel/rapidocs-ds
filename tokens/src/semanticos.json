@@ -1,0 +1,14 @@
+{
+  "cor": {
+    "acao": {
+      "primaria": { "$type": "color", "$value": "{cor.azul.500}" }
+    },
+    "texto": {
+      "padrao": { "$type": "color", "$value": "{cor.cinza.900}" }
+    },
+    "fundo": {
+      "padrao": { "$type": "color", "$value": "{cor.cinza.000}" },
+      "sutil": { "$type": "color", "$value": "{cor.cinza.100}" }
+    }
+  }
+}

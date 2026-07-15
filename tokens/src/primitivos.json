@@ -1,0 +1,12 @@
+{
+  "cor": {
+    "azul": {
+      "500": { "$type": "color", "$value": "#2563EB" }
+    },
+    "cinza": {
+      "000": { "$type": "color", "$value": "#FFFFFF" },
+      "100": { "$type": "color", "$value": "#F3F4F6" },
+      "900": { "$type": "color", "$value": "#111827" }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Storybook build (gerado no CI)
+apps/storybook/storybook-static/
+
+# Flutter / Dart
+.dart_tool/
+.packages
+build/flutter/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+
+# Claude Code (config local — os .md de contexto sao versionados)
+.claude/settings.local.json
+
+# Ambiente
+.env
+.env.local
