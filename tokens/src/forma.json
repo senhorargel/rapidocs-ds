@@ -1,0 +1,41 @@
+{
+  "$type": "dimension",
+  "component": {
+    "2xl": {
+      "$value": "{shape.32}",
+      "$type": "dimension"
+    },
+    "2xs": {
+      "$value": "{shape.4}",
+      "$type": "dimension"
+    },
+    "3xl": {
+      "$value": "{shape.40}",
+      "$type": "dimension"
+    },
+    "3xs": {
+      "$value": "{shape.2}",
+      "$type": "dimension"
+    },
+    "l": {
+      "$value": "{shape.20}",
+      "$type": "dimension"
+    },
+    "m": {
+      "$value": "{shape.16}",
+      "$type": "dimension"
+    },
+    "s": {
+      "$value": "{shape.12}",
+      "$type": "dimension"
+    },
+    "xl": {
+      "$value": "{shape.24}",
+      "$type": "dimension"
+    },
+    "xs": {
+      "$value": "{shape.8}",
+      "$type": "dimension"
+    }
+  }
+}

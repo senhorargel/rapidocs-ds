@@ -24,7 +24,7 @@ const onlyDarkSemantics = (token) =>
   (token.filePath || '').replace(/\\/g, '/').endsWith('/semanticos.dark.json');
 
 const light = new StyleDictionary({
-  source: ['src/primitivos.json', 'src/semanticos.json'],
+  source: ['src/primitivos.json', 'src/semanticos.json', 'src/escala.json', 'src/forma.json'],
   platforms: {
     web: {
       transformGroup: 'css',

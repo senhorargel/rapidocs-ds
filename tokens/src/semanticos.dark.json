@@ -111,7 +111,7 @@
     "focus-ring-success": {
       "$type": "color",
       "$description": "Anel de foco para estados de sucesso.",
-      "$value": "{color.alpha.Sucess.24}"
+      "$value": "{color.alpha.Success.24}"
     },
     "hover-on-color": {
       "$type": "color",
