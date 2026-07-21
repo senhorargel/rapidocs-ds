@@ -1,0 +1,67 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-theme="dark"] {
+  --accent-blue: #55a1f2; /** Cor decorativa azul sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
+  --accent-blue-light: #113760; /** Fundo decorativo azul suave para tags e avatares. NÃO usar como status. */
+  --accent-green: #44cb93; /** Cor decorativa verde sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
+  --accent-green-light: #084c30; /** Fundo decorativo verde suave para tags e avatares. NÃO usar como status. */
+  --accent-orange: #ff9d3b; /** Cor decorativa laranja sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
+  --accent-orange-light: #663504; /** Fundo decorativo laranja suave para tags e avatares. NÃO usar como status. */
+  --accent-pink: #ed58cc; /** Cor decorativa rosa sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
+  --accent-pink-light: #5d124c; /** Fundo decorativo rosa suave para tags e avatares. NÃO usar como status. */
+  --accent-purple: #9d8afe; /** Cor decorativa roxo sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
+  --accent-purple-light: #281c54; /** Fundo decorativo roxo suave para tags e avatares. NÃO usar como status. */
+  --accent-red: #eb4b5b; /** Cor decorativa vermelho sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
+  --accent-red-light: #5c0c14; /** Fundo decorativo vermelho suave para tags e avatares. NÃO usar como status. */
+  --accent-yellow: #fabc40; /** Cor decorativa amarelo sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
+  --accent-yellow-light: #644406; /** Fundo decorativo amarelo suave para tags e avatares. NÃO usar como status. */
+  --action-active: #5c9aff; /** Estado ativo/selecionado. Referencia brand/fill (segue a cor da marca). */
+  --action-disable-background: #292e36; /** Fundo de elementos desabilitados. */
+  --action-disable-border: #373e48; /** Borda de elementos desabilitados. */
+  --action-disable-content: #444d5a; /** Texto/ícone de elementos desabilitados. */
+  --action-focus-ring-brand: rgba(51, 129, 255, 0.24); /** Anel de foco (focus ring) para elementos brand. */
+  --action-focus-ring-error: rgba(230, 30, 50, 0.24); /** Anel de foco para estados de erro/destrutivo. Pareie com feedback/error. */
+  --action-focus-ring-neutral: rgba(255, 255, 255, 0.24); /** Anel de foco neutro. Inverte para permanecer visível nos dois modos. */
+  --action-focus-ring-success: rgba(21, 190, 120, 0.24); /** Anel de foco para estados de sucesso. */
+  --action-hover-on-color: rgba(8, 9, 10, 0.16); /** Overlay de hover sobre botões/superfícies coloridas sólidas (escurece levemente). */
+  --action-hover-on-color-secondary: rgba(8, 9, 10, 0.04); /** Overlay de hover mais leve sobre superfícies coloridas. */
+  --action-hover-on-dark: rgba(8, 9, 10, 0.16); /** Overlay de hover sobre superfícies escuras. */
+  --border-inverse: #9da2aa; /** Borda sobre superfícies de contraste oposto. */
+  --border-primary: #444d5a; /** Borda padrão de inputs, cards e divisores com ênfase. */
+  --border-secondary: #373e48; /** Borda/divisor sutil para separações internas discretas. */
+  --brand-fill: #5c9aff; /** Cor forte da marca: fundo de botão primário, borda e ícone brand. Pareie texto com brand/onFill. */
+  --brand-on-fill: #08090a; /** Texto/ícone sobre brand/fill (superfície brand sólida). Contraste calibrado. */
+  --brand-on-surface: #5c9aff; /** Texto/ícone brand sobre a página ou sobre brand/surface: links, ênfase brand. */
+  --brand-surface: #143466; /** Superfície brand tingida suave: hover de outline, destaques leves. Pareie texto com brand/onSurface. */
+  --content-always-dark: #08090a; /** Texto/ícone sempre escuro nos dois modos. */
+  --content-always-light: #ffffff; /** Texto/ícone sempre claro nos dois modos. */
+  --content-inverse: #08090a; /** Texto/ícone sobre background/inverse. Inverte entre os modos. */
+  --content-primary: #ffffff; /** Cor principal de texto e ícones. Títulos e corpo em alto contraste. */
+  --content-secondary: #9da2aa; /** Texto e ícones de apoio (hierarquia secundária): legendas, descrições, metadados de destaque. */
+  --content-tertiary: #5b6471; /** Texto de menor ênfase: placeholder, hints, metadados. Contraste baixo proposital; use só sobre níveis 1 e 2 de fundo. */
+  --feedback-error-fill: #e61e32; /** Cor forte de status error: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/error/onFill. */
+  --feedback-error-on-fill: #ffffff; /** Texto/ícone sobre feedback/error/fill (superfície sólida). Contraste calibrado. */
+  --feedback-error-on-surface: #eb4b5b; /** Texto/ícone de status error sobre a surface ou sobre a página: validação, texto de alerta light. */
+  --feedback-error-surface: #5c0c14; /** Superfície tingida suave de status error: alert light, badge, container, input em erro. */
+  --feedback-info-fill: #3381ff; /** Cor forte de status info: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/info/onFill. */
+  --feedback-info-on-fill: #ffffff; /** Texto/ícone sobre feedback/info/fill (superfície sólida). Contraste calibrado. */
+  --feedback-info-on-surface: #5c9aff; /** Texto/ícone de status info sobre a surface ou sobre a página: validação, texto de alerta light. */
+  --feedback-info-surface: #143466; /** Superfície tingida suave de status info: alert light, badge, container, input em erro. */
+  --feedback-success-fill: #15be78; /** Cor forte de status success: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/success/onFill. */
+  --feedback-success-on-fill: #08090a; /** Texto/ícone sobre feedback/success/fill (superfície sólida). Contraste calibrado. */
+  --feedback-success-on-surface: #44cb93; /** Texto/ícone de status success sobre a surface ou sobre a página: validação, texto de alerta light. */
+  --feedback-success-surface: #084c30; /** Superfície tingida suave de status success: alert light, badge, container, input em erro. */
+  --feedback-warning-fill: #f9ab10; /** Cor forte de status warning: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/warning/onFill. */
+  --feedback-warning-on-fill: #08090a; /** Texto/ícone sobre feedback/warning/fill (superfície sólida). Contraste calibrado. */
+  --feedback-warning-on-surface: #fabc40; /** Texto/ícone de status warning sobre a surface ou sobre a página: validação, texto de alerta light. */
+  --feedback-warning-surface: #644406; /** Superfície tingida suave de status warning: alert light, badge, container, input em erro. */
+  --surface-always-dark: #08090a; /** Fundo que permanece escuro nos dois modos, independente do tema. */
+  --surface-always-light: #ffffff; /** Fundo que permanece claro nos dois modos, independente do tema. */
+  --surface-inverse: #ffffff; /** Fundo de contraste oposto ao tema (tooltip, snackbar). Inverte entre os modos. */
+  --surface-overlay: rgba(8, 9, 10, 0.32); /** Scrim de modal e bottom sheet: escurece o conteúdo atrás. Escuro nos dois modos. */
+  --surface-primary: #1b1f24; /** Fundo base da página/tela. Nível 1 de elevação (mais ao fundo). */
+  --surface-secondary: #292e36; /** Fundo de cards e superfícies sobre a página. Nível 2 de elevação. */
+  --surface-tertiary: #373e48; /** Fundo de elementos aninhados dentro de cards: inputs, tiles, linhas. Nível 3 de elevação. */
+}

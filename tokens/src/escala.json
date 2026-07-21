@@ -1,0 +1,179 @@
+{
+  "$type": "dimension",
+  "component": {
+    "4": {
+      "$value": "{size.4}",
+      "$type": "dimension"
+    },
+    "6": {
+      "$value": "{size.6}",
+      "$type": "dimension"
+    },
+    "8": {
+      "$value": "{size.8}",
+      "$type": "dimension"
+    },
+    "12": {
+      "$value": "{size.12}",
+      "$type": "dimension"
+    },
+    "16": {
+      "$value": "{size.16}",
+      "$type": "dimension"
+    },
+    "20": {
+      "$value": "{size.20}",
+      "$type": "dimension"
+    },
+    "24": {
+      "$value": "{size.24}",
+      "$type": "dimension"
+    },
+    "32": {
+      "$value": "{size.32}",
+      "$type": "dimension"
+    },
+    "40": {
+      "$value": "{size.40}",
+      "$type": "dimension"
+    },
+    "44": {
+      "$value": "{size.44}",
+      "$type": "dimension"
+    },
+    "48": {
+      "$value": "{size.48}",
+      "$type": "dimension"
+    },
+    "56": {
+      "$value": "{size.56}",
+      "$type": "dimension"
+    },
+    "64": {
+      "$value": "{size.64}",
+      "$type": "dimension"
+    },
+    "72": {
+      "$value": "{size.72}",
+      "$type": "dimension"
+    },
+    "80": {
+      "$value": "{size.80}",
+      "$type": "dimension"
+    }
+  },
+  "gap": {
+    "2xl": {
+      "$value": "{space.32}",
+      "$type": "dimension"
+    },
+    "2xs": {
+      "$value": "{space.4}",
+      "$type": "dimension"
+    },
+    "3xl": {
+      "$value": "{space.40}",
+      "$type": "dimension"
+    },
+    "3xs": {
+      "$value": "{space.2}",
+      "$type": "dimension"
+    },
+    "l": {
+      "$value": "{space.20}",
+      "$type": "dimension"
+    },
+    "m": {
+      "$value": "{space.16}",
+      "$type": "dimension"
+    },
+    "negative": {
+      "2xl": {
+        "$value": "{space.negative.32}",
+        "$type": "dimension"
+      },
+      "2xs": {
+        "$value": "{space.negative.4}",
+        "$type": "dimension"
+      },
+      "3xl": {
+        "$value": "{space.negative.40}",
+        "$type": "dimension"
+      },
+      "3xs": {
+        "$value": "{space.negative.2}",
+        "$type": "dimension"
+      },
+      "l": {
+        "$value": "{space.negative.20}",
+        "$type": "dimension"
+      },
+      "m": {
+        "$value": "{space.negative.16}",
+        "$type": "dimension"
+      },
+      "s": {
+        "$value": "{space.negative.12}",
+        "$type": "dimension"
+      },
+      "xl": {
+        "$value": "{space.negative.24}",
+        "$type": "dimension"
+      },
+      "xs": {
+        "$value": "{space.negative.8}",
+        "$type": "dimension"
+      }
+    },
+    "s": {
+      "$value": "{space.12}",
+      "$type": "dimension"
+    },
+    "xl": {
+      "$value": "{space.24}",
+      "$type": "dimension"
+    },
+    "xs": {
+      "$value": "{space.8}",
+      "$type": "dimension"
+    }
+  },
+  "padding": {
+    "2xl": {
+      "$value": "{space.32}",
+      "$type": "dimension"
+    },
+    "2xs": {
+      "$value": "{space.4}",
+      "$type": "dimension"
+    },
+    "3xl": {
+      "$value": "{space.40}",
+      "$type": "dimension"
+    },
+    "3xs": {
+      "$value": "{space.2}",
+      "$type": "dimension"
+    },
+    "l": {
+      "$value": "{space.20}",
+      "$type": "dimension"
+    },
+    "m": {
+      "$value": "{space.16}",
+      "$type": "dimension"
+    },
+    "s": {
+      "$value": "{space.12}",
+      "$type": "dimension"
+    },
+    "xl": {
+      "$value": "{space.24}",
+      "$type": "dimension"
+    },
+    "xs": {
+      "$value": "{space.8}",
+      "$type": "dimension"
+    }
+  }
+}
