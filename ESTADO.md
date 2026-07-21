@@ -12,19 +12,21 @@
 
 ## 📍 Onde paramos (estado atual)
 
-**Fase atual:** Fase 1 — Fundação (tokens). Ambiente pronto; falta a extração real do Figma.
+**Fase atual:** Fase 1 — Fundação (tokens). Cores extraídas do Figma; faltam as demais variables.
 
 - ✅ **Ambiente montado**: monorepo pnpm, Style Dictionary v4, Storybook 8, CI de deploy no GitHub Pages.
 - ✅ **Vitrine no ar**: https://senhorargel.github.io/rapidocs-ds/ (republica sozinha a cada push na `main`).
-- ⚠️ **Tokens ainda são placeholder**: só 4 cores primitivas + 4 semânticas. Sem tipografia / espaçamento / raio / sombra. **A extração real do Figma ainda não foi feita.**
+- ✅ **Cores extraídas do Figma** (`feature/fundacao-tokens`): 219 primitivas (escalas light/dark + alpha) + 61 semânticas com descrição de uso, referenciando as primitivas. Build gera light (`:root`) e dark (`[data-theme="dark"]`) para web + Dart. Vitrine reescrita mostra tudo com toggle de tema.
+- ⏳ **Faltam as outras variables**: text styles, `scale` (espaçamento/tamanho), `shape`, `font-family`.
 - 🕒 **Componentes (Angular/Flutter)**: não iniciados — são Fase 2.
 - 📁 **Pasta `assets/logo/`** criada, aguardando o SVG da logo.
 
 ## 🎯 Próximo passo
 
-**Extrair os tokens reais do Figma** (via MCP, formato DTCG) e substituir os
-placeholders em `tokens/src/primitivos.json` e `tokens/src/semanticos.json`.
-Depois: rebuild (`build:tokens`) e conferir na vitrine.
+**Extrair as demais variables do Figma**, na mesma abordagem das cores: começar
+pelos **text styles / tipografia** (`font-family`, `.primitive-fonts`, tamanhos)
+e depois `scale` (espaçamento/tamanho/gap) e `shape` (raio de borda). Ao final,
+rebuild e conferir na vitrine.
 
 ## 🗺️ Mapa de leitura (onde está cada coisa)
 
@@ -46,6 +48,7 @@ Depois: rebuild (`build:tokens`) e conferir na vitrine.
 
 ## 📓 Linha do tempo (histórico — mais recente no topo)
 
+- **2026-07-21** — `feature/fundacao-tokens`: extraída a fundação de **cores** do Figma (219 primitivas + 61 semânticas light/dark com descrições). Gerados `tokens/src/{primitivos,semanticos,semanticos.dark}.json`, novo `build-tokens.mjs` (SD light+dark), saídas web+dart, e vitrine reescrita (lê tokens dinamicamente + toggle de tema). Detalhes: `.claude/features/fundacao-tokens.md`.
 - **2026-07-21** — Máquina 2: repositório clonado; criada a pasta `assets/logo/` (aguardando SVG); `gh` CLI instalado e autenticado nesta máquina; criado este `ESTADO.md` como orquestrador de contexto e ligado ao `CLAUDE.md` para leitura automática no início de cada sessão.
 - **2026-07-15** — `/brainstorm` gerou o `PRD.md`; `/ambiente` montou a base: monorepo pnpm, Style Dictionary v4 (tokens placeholder de cor), Storybook 8 e CI de deploy no GitHub Pages. Vitrine publicada com sucesso.
 

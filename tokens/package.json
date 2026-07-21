@@ -9,11 +9,13 @@
   ],
   "exports": {
     "./css": "./build/web/tokens.css",
+    "./css-dark": "./build/web/tokens.dark.css",
     "./scss": "./build/web/tokens.scss",
-    "./dart": "./build/dart/tokens.dart"
+    "./dart": "./build/dart/tokens.dart",
+    "./dart-dark": "./build/dart/tokens.dark.dart"
   },
   "scripts": {
-    "build": "style-dictionary build --config ./style-dictionary.config.mjs"
+    "build": "node build-tokens.mjs"
   },
   "devDependencies": {
     "style-dictionary": "^4.3.0"
