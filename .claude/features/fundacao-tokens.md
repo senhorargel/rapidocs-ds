@@ -22,6 +22,9 @@ Extração das cores do Figma "Rapidocs System [Piloto]" (coleções `.primitive
 ## Como foi extraído
 Plugin figma-console (Desktop Bridge) → `figma_export_tokens` (DTCG, dry-run p/ inspeção, depois real) → script Node `scratchpad/transform-tokens.mjs` que limpa a estrutura (remove raiz de coleção, metadados e floats; reescreve refs `{primitives.x}`→`{x}`).
 
+## Correções aplicadas no Figma
+- `color/yellow/yellow/*` → `color/yellow/*`: 20 variáveis renomeadas no Figma e re-sincronizadas (aliases por ID preservados) — 2026-07-21.
+
 ## Pendências (ver debt.md)
 - Demais variables: text styles, `scale`, `shape`, `font-family`, `.primitive-fonts`.
-- Quirks do Figma a corrigir na fonte: `color/yellow/yellow` (duplicado) e `color/alpha/Sucess` (grafia).
+- Quirk do Figma a corrigir na fonte: `color/alpha/Sucess` (grafia "Sucess").

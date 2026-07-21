@@ -202,26 +202,26 @@
   --color-red-light-800: #8a121e;
   --color-red-light-900: #5c0c14;
   --color-red-light-1000: #2e060a;
-  --color-yellow-yellow-dark-100: #191102;
-  --color-yellow-yellow-dark-200: #322203;
-  --color-yellow-yellow-dark-300: #644406;
-  --color-yellow-yellow-dark-400: #95670a;
-  --color-yellow-yellow-dark-500: #c7890d;
-  --color-yellow-yellow-dark-600: #f9ab10;
-  --color-yellow-yellow-dark-700: #fabc40;
-  --color-yellow-yellow-dark-800: #fbcd70;
-  --color-yellow-yellow-dark-900: #fddd9f;
-  --color-yellow-yellow-dark-1000: #feeecf;
-  --color-yellow-yellow-light-100: #fef7e7;
-  --color-yellow-yellow-light-200: #feeecf;
-  --color-yellow-yellow-light-300: #fddd9f;
-  --color-yellow-yellow-light-400: #fbcd70;
-  --color-yellow-yellow-light-500: #fabc40;
-  --color-yellow-yellow-light-600: #f9ab10;
-  --color-yellow-yellow-light-700: #c7890d;
-  --color-yellow-yellow-light-800: #95670a;
-  --color-yellow-yellow-light-900: #644406;
-  --color-yellow-yellow-light-1000: #322203;
+  --color-yellow-dark-100: #191102;
+  --color-yellow-dark-200: #322203;
+  --color-yellow-dark-300: #644406;
+  --color-yellow-dark-400: #95670a;
+  --color-yellow-dark-500: #c7890d;
+  --color-yellow-dark-600: #f9ab10;
+  --color-yellow-dark-700: #fabc40;
+  --color-yellow-dark-800: #fbcd70;
+  --color-yellow-dark-900: #fddd9f;
+  --color-yellow-dark-1000: #feeecf;
+  --color-yellow-light-100: #fef7e7;
+  --color-yellow-light-200: #feeecf;
+  --color-yellow-light-300: #fddd9f;
+  --color-yellow-light-400: #fbcd70;
+  --color-yellow-light-500: #fabc40;
+  --color-yellow-light-600: #f9ab10;
+  --color-yellow-light-700: #c7890d;
+  --color-yellow-light-800: #95670a;
+  --color-yellow-light-900: #644406;
+  --color-yellow-light-1000: #322203;
   --accent-blue: var(--color-blue-light-600); /** Cor decorativa azul sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
   --accent-blue-light: var(--color-blue-light-200); /** Fundo decorativo azul suave para tags e avatares. NÃO usar como status. */
   --accent-green: var(--color-green-light-600); /** Cor decorativa verde sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
@@ -234,8 +234,8 @@
   --accent-purple-light: var(--color-purple-light-200); /** Fundo decorativo roxo suave para tags e avatares. NÃO usar como status. */
   --accent-red: var(--color-red-light-600); /** Cor decorativa vermelho sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
   --accent-red-light: var(--color-red-light-100); /** Fundo decorativo vermelho suave para tags e avatares. NÃO usar como status. */
-  --accent-yellow: var(--color-yellow-yellow-light-600); /** Cor decorativa amarelo sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
-  --accent-yellow-light: var(--color-yellow-yellow-light-200); /** Fundo decorativo amarelo suave para tags e avatares. NÃO usar como status. */
+  --accent-yellow: var(--color-yellow-light-600); /** Cor decorativa amarelo sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
+  --accent-yellow-light: var(--color-yellow-light-200); /** Fundo decorativo amarelo suave para tags e avatares. NÃO usar como status. */
   --action-disable-background: var(--color-neutral-light-300); /** Fundo de elementos desabilitados. */
   --action-disable-border: var(--color-neutral-light-400); /** Borda de elementos desabilitados. */
   --action-disable-content: var(--color-neutral-light-500); /** Texto/ícone de elementos desabilitados. */
@@ -268,9 +268,9 @@
   --feedback-success-fill: var(--color-green-light-600); /** Cor forte de status success: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/success/onFill. */
   --feedback-success-on-surface: var(--color-green-light-800); /** Texto/ícone de status success sobre a surface ou sobre a página: validação, texto de alerta light. */
   --feedback-success-surface: var(--color-green-light-100); /** Superfície tingida suave de status success: alert light, badge, container, input em erro. */
-  --feedback-warning-fill: var(--color-yellow-yellow-light-600); /** Cor forte de status warning: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/warning/onFill. */
-  --feedback-warning-on-surface: var(--color-yellow-yellow-light-800); /** Texto/ícone de status warning sobre a surface ou sobre a página: validação, texto de alerta light. */
-  --feedback-warning-surface: var(--color-yellow-yellow-light-100); /** Superfície tingida suave de status warning: alert light, badge, container, input em erro. */
+  --feedback-warning-fill: var(--color-yellow-light-600); /** Cor forte de status warning: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/warning/onFill. */
+  --feedback-warning-on-surface: var(--color-yellow-light-800); /** Texto/ícone de status warning sobre a surface ou sobre a página: validação, texto de alerta light. */
+  --feedback-warning-surface: var(--color-yellow-light-100); /** Superfície tingida suave de status warning: alert light, badge, container, input em erro. */
   --surface-always-dark: var(--color-neutral-light-1100); /** Fundo que permanece escuro nos dois modos, independente do tema. */
   --surface-always-light: var(--color-neutral-light-0); /** Fundo que permanece claro nos dois modos, independente do tema. */
   --surface-inverse: var(--color-neutral-light-1100); /** Fundo de contraste oposto ao tema (tooltip, snackbar). Inverte entre os modos. */

@@ -64,12 +64,12 @@
     "yellow": {
       "$type": "color",
       "$description": "Cor decorativa amarelo sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.",
-      "$value": "{color.yellow.yellow.light.600}"
+      "$value": "{color.yellow.light.600}"
     },
     "yellow-light": {
       "$type": "color",
       "$description": "Fundo decorativo amarelo suave para tags e avatares. NÃO usar como status.",
-      "$value": "{color.yellow.yellow.light.200}"
+      "$value": "{color.yellow.light.200}"
     }
   },
   "action": {
@@ -271,7 +271,7 @@
       "fill": {
         "$type": "color",
         "$description": "Cor forte de status warning: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/warning/onFill.",
-        "$value": "{color.yellow.yellow.light.600}"
+        "$value": "{color.yellow.light.600}"
       },
       "onFill": {
         "$type": "color",
@@ -281,12 +281,12 @@
       "onSurface": {
         "$type": "color",
         "$description": "Texto/ícone de status warning sobre a surface ou sobre a página: validação, texto de alerta light.",
-        "$value": "{color.yellow.yellow.light.800}"
+        "$value": "{color.yellow.light.800}"
       },
       "surface": {
         "$type": "color",
         "$description": "Superfície tingida suave de status warning: alert light, badge, container, input em erro.",
-        "$value": "{color.yellow.yellow.light.100}"
+        "$value": "{color.yellow.light.100}"
       }
     }
   },
