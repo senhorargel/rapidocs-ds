@@ -50,6 +50,7 @@ Figma → `tokens/src/*.json` → Style Dictionary → `web/tokens.css` (Angular
 - Storybook: Sim — `corepack pnpm storybook`
 
 ## Registro vivo (consultar antes de codar)
+- **Estado atual + próximo passo + histórico: `ESTADO.md` — LER PRIMEIRO no início de cada sessão**
 - Componentes já criados: `.claude/components.md`
 - Padrões estabelecidos: `.claude/patterns.md`
 - Dívidas técnicas: `.claude/debt.md`
