@@ -10,6 +10,7 @@
   "exports": {
     "./css": "./build/web/tokens.css",
     "./css-dark": "./build/web/tokens.dark.css",
+    "./css-typography": "./build/web/tokens.typography.css",
     "./scss": "./build/web/tokens.scss",
     "./dart": "./build/dart/tokens.dart",
     "./dart-dark": "./build/dart/tokens.dark.dart"

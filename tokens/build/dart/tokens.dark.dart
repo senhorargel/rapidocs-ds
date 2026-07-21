@@ -9,8 +9,8 @@
 
 import 'dart:ui';
 
-class RapidocsColorsDark {
-    RapidocsColorsDark._();
+class RapidocsTokensDark {
+    RapidocsTokensDark._();
 
     static const accentBlue = Color(0xFF55A1F2); /** Cor decorativa azul sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
     static const accentBlueLight = Color(0xFF113760); /** Fundo decorativo azul suave para tags e avatares. NÃO usar como status. */

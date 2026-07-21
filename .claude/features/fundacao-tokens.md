@@ -22,8 +22,14 @@ Extração das cores do Figma "Rapidocs System [Piloto]" (coleções `.primitive
 ## Como foi extraído
 Plugin figma-console (Desktop Bridge) → `figma_export_tokens` (DTCG, dry-run p/ inspeção, depois real) → script Node `scratchpad/transform-tokens.mjs` que limpa a estrutura (remove raiz de coleção, metadados e floats; reescreve refs `{primitives.x}`→`{x}`).
 
+## Extensões (mesma feature, 2026-07-21)
+- **Numérico**: primitivas `space`/`size`/`shape` (px) em `primitivos.json`; `escala.json` (padding/gap/component → referenciam size/space); `forma.json` (raio por componente, modo Default). Story "Escala & Forma".
+- **Tipografia**: `tipografia.json` (família Archivo, 9 pesos, 23 tamanhos) + `text-styles.json` (28 text styles `typography`) → classes `.text-*` em `tokens.typography.css`. Story "Tipografia".
+- Build (`build-tokens.mjs`): light Dart agora é `RapidocsTokens`; formato customizado `css/typography-classes` p/ os text styles.
+
 ## Correções aplicadas no Figma
 - `color/yellow/yellow/*` → `color/yellow/*`: 20 variáveis renomeadas no Figma e re-sincronizadas (aliases por ID preservados) — 2026-07-21.
+- `color/alpha/Sucess/*` → `color/alpha/Success/*`: 7 variáveis renomeadas no Figma — 2026-07-21.
 
 ## Pendências (ver debt.md)
 - Demais variables: text styles, `scale`, `shape`, `font-family`, `.primitive-fonts`.

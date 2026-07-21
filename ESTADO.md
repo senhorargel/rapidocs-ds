@@ -19,16 +19,16 @@
 - ✅ **Cores extraídas do Figma** (`feature/fundacao-tokens`): 219 primitivas (light/dark + alpha) + 61 semânticas com descrição, light (`:root`) + dark (`[data-theme="dark"]`), web + Dart.
 - ✅ **Espaçamento/tamanho/raio extraídos**: primitivas numéricas (`space`/`size`/`shape`, em px) + escala semântica (`padding`/`gap`/`component`) + forma/raio (modo Default). Arquivos `escala.json` e `forma.json`.
 - ✅ **Quirks do Figma corrigidos na fonte**: `yellow/yellow` → `yellow` e `Sucess` → `Success` (renomeados no Figma + re-sincronizados).
-- ⏳ **Falta tipografia**: fontes (família Archivo / pesos / tamanhos) + os **28 text styles** (`Title Web/*`, `Title App/*`, `Label/*`, `Caption/*`).
+- ✅ **Tipografia extraída**: família Archivo, 9 pesos, 23 tamanhos primitivos (`tipografia.json`) + os **28 text styles** (`text-styles.json`) gerando classes CSS `.text-*` (`tokens.typography.css`). Stories de Tipografia na vitrine.
+- 🎉 **Fundação (variables + text styles) COMPLETA** — pronta pra ir pra `main`.
 - 🕒 **Componentes (Angular/Flutter)**: não iniciados — são Fase 2.
 - 📁 **Pasta `assets/logo/`** criada, aguardando o SVG da logo.
 
 ## 🎯 Próximo passo
 
-**Extrair a tipografia**: fontes (`font-family`, `.primitive-fonts`) + os 28
-**text styles** como tokens `typography` (família, peso, tamanho, entrelinha).
-Tratar as 9 referências cross-library das fontes. Depois: rebuild, story de
-tipografia, e então **PR do `feature/fundacao-tokens` → develop → main**.
+Fundação completa na branch `feature/fundacao-tokens`. **Levar pra `main`**:
+PR `feature/fundacao-tokens` → `develop` → `main` (publica a vitrine atualizada).
+Depois disso, a Fase 2 (componentes Angular/Flutter) pode começar consumindo estes tokens.
 
 ## 🗺️ Mapa de leitura (onde está cada coisa)
 
@@ -50,6 +50,7 @@ tipografia, e então **PR do `feature/fundacao-tokens` → develop → main**.
 
 ## 📓 Linha do tempo (histórico — mais recente no topo)
 
+- **2026-07-21** — Extraída a **tipografia**: primitivas de fonte (`tipografia.json`: família Archivo, pesos, tamanhos) + 28 text styles (`text-styles.json`) → classes `.text-*` (`tokens.typography.css`), com stories na vitrine. Camada `Font-Size/*` cross-library pulada (ver debt). **Fundação completa.**
 - **2026-07-21** — Corrigidos no Figma os quirks `yellow/yellow`→`yellow` (20 vars) e `Sucess`→`Success` (7 vars), re-sincronizados. Extraídos os numéricos: primitivas `space`/`size`/`shape` + `escala.json` (padding/gap/component) + `forma.json` (raio, Default), com story de Escala & Forma na vitrine.
 - **2026-07-21** — `feature/fundacao-tokens`: extraída a fundação de **cores** do Figma (219 primitivas + 61 semânticas light/dark com descrições). Gerados `tokens/src/{primitivos,semanticos,semanticos.dark}.json`, novo `build-tokens.mjs` (SD light+dark), saídas web+dart, e vitrine reescrita (lê tokens dinamicamente + toggle de tema). Detalhes: `.claude/features/fundacao-tokens.md`.
 - **2026-07-21** — Máquina 2: repositório clonado; criada a pasta `assets/logo/` (aguardando SVG); `gh` CLI instalado e autenticado nesta máquina; criado este `ESTADO.md` como orquestrador de contexto e ligado ao `CLAUDE.md` para leitura automática no início de cada sessão.

@@ -1,6 +1,7 @@
 // Carrega os tokens gerados pelo Style Dictionary (rode o build de tokens antes).
 import '../../../tokens/build/web/tokens.css';
 import '../../../tokens/build/web/tokens.dark.css';
+import '../../../tokens/build/web/tokens.typography.css';
 
 const preview = {
   parameters: {

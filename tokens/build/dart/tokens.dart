@@ -9,8 +9,8 @@
 
 import 'dart:ui';
 
-class RapidocsColors {
-    RapidocsColors._();
+class RapidocsTokens {
+    RapidocsTokens._();
 
     static const accentBlue = Color(0xFF2A89EF); /** Cor decorativa azul sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*. */
     static const accentBlueLight = Color(0xFFD4E7FC); /** Fundo decorativo azul suave para tags e avatares. NÃO usar como status. */
@@ -293,6 +293,7 @@ class RapidocsColors {
     static const contentPrimary = Color(0xFF080B12); /** Cor principal de texto e ícones. Títulos e corpo em alto contraste. */
     static const contentSecondary = Color(0xFF4B5563); /** Texto e ícones de apoio (hierarquia secundária): legendas, descrições, metadados de destaque. */
     static const contentTertiary = Color(0xFF9CA3AF); /** Texto de menor ênfase: placeholder, hints, metadados. Contraste baixo proposital; use só sobre níveis 1 e 2 de fundo. */
+    static const familiaArchivo = Archivo;
     static const feedbackErrorFill = Color(0xFFE61E32); /** Cor forte de status error: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/error/onFill. */
     static const feedbackErrorOnFill = Color(0xFFFFFFFF); /** Texto/ícone sobre feedback/error/fill (superfície sólida). Contraste calibrado. */
     static const feedbackErrorOnSurface = Color(0xFFB81828); /** Texto/ícone de status error sobre a surface ou sobre a página: validação, texto de alerta light. */
@@ -336,6 +337,15 @@ class RapidocsColors {
     static const paddingS = 192.00;
     static const paddingXl = 384.00;
     static const paddingXs = 128.00;
+    static const pesoBlack = 900;
+    static const pesoBold = 700;
+    static const pesoExtraBold = 800;
+    static const pesoExtraLight = 200;
+    static const pesoLight = 300;
+    static const pesoMedium = 500;
+    static const pesoRegular = 400;
+    static const pesoSemibold = 600;
+    static const pesoThin = 100;
     static const shape0 = 0.00;
     static const shape100 = 1600.00;
     static const shape12 = 192.00;
@@ -416,4 +426,27 @@ class RapidocsColors {
     static const surfacePrimary = Color(0xFFFFFFFF); /** Fundo base da página/tela. Nível 1 de elevação (mais ao fundo). */
     static const surfaceSecondary = Color(0xFFF3F4F6); /** Fundo de cards e superfícies sobre a página. Nível 2 de elevação. */
     static const surfaceTertiary = Color(0xFFE5E7EB); /** Fundo de elementos aninhados dentro de cards: inputs, tiles, linhas. Nível 3 de elevação. */
+    static const tamanho0 = 0.00;
+    static const tamanho10 = 160.00;
+    static const tamanho104 = 1664.00;
+    static const tamanho12 = 192.00;
+    static const tamanho14 = 224.00;
+    static const tamanho16 = 256.00;
+    static const tamanho18 = 288.00;
+    static const tamanho2 = 32.00;
+    static const tamanho20 = 320.00;
+    static const tamanho24 = 384.00;
+    static const tamanho32 = 512.00;
+    static const tamanho4 = 64.00;
+    static const tamanho40 = 640.00;
+    static const tamanho48 = 768.00;
+    static const tamanho56 = 896.00;
+    static const tamanho6 = 96.00;
+    static const tamanho64 = 1024.00;
+    static const tamanho72 = 1152.00;
+    static const tamanho8 = 128.00;
+    static const tamanho80 = 1280.00;
+    static const tamanho88 = 1408.00;
+    static const tamanho96 = 1536.00;
+    static const tamanho999 = 15984.00;
 }
