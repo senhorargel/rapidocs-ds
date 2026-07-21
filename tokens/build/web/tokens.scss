@@ -1,11 +1,440 @@
 
 // Do not edit directly, this file was auto-generated.
 
-$cor-azul-500: #2563eb;
-$cor-cinza-100: #f3f4f6;
-$cor-cinza-900: #111827;
-$cor-cinza-000: #ffffff;
-$cor-acao-primaria: #2563eb;
-$cor-texto-padrao: #111827;
-$cor-fundo-padrao: #ffffff;
-$cor-fundo-sutil: #f3f4f6;
+$color-alpha-brand-0: rgba(51, 129, 255, 0);
+$color-alpha-brand-2: rgba(51, 129, 255, 0.02);
+$color-alpha-brand-4: rgba(51, 129, 255, 0.04);
+$color-alpha-brand-8: rgba(51, 129, 255, 0.08);
+$color-alpha-brand-16: rgba(51, 129, 255, 0.16);
+$color-alpha-brand-24: rgba(51, 129, 255, 0.24);
+$color-alpha-brand-32: rgba(51, 129, 255, 0.32);
+$color-alpha-dark-0: rgba(8, 9, 10, 0);
+$color-alpha-dark-2: rgba(8, 9, 10, 0.02);
+$color-alpha-dark-4: rgba(8, 9, 10, 0.04);
+$color-alpha-dark-8: rgba(8, 9, 10, 0.08);
+$color-alpha-dark-16: rgba(8, 9, 10, 0.16);
+$color-alpha-dark-24: rgba(8, 9, 10, 0.24);
+$color-alpha-dark-32: rgba(8, 9, 10, 0.32);
+$color-alpha-light-0: rgba(255, 255, 255, 0);
+$color-alpha-light-2: rgba(255, 255, 255, 0.02);
+$color-alpha-light-4: rgba(255, 255, 255, 0.04);
+$color-alpha-light-8: rgba(255, 255, 255, 0.08);
+$color-alpha-light-16: rgba(255, 255, 255, 0.16);
+$color-alpha-light-24: rgba(255, 255, 255, 0.24);
+$color-alpha-light-32: rgba(255, 255, 255, 0.32);
+$color-alpha-red-0: rgba(230, 30, 50, 0);
+$color-alpha-red-2: rgba(230, 30, 50, 0.02);
+$color-alpha-red-4: rgba(230, 30, 50, 0.04);
+$color-alpha-red-8: rgba(230, 30, 50, 0.08);
+$color-alpha-red-16: rgba(230, 30, 50, 0.16);
+$color-alpha-red-24: rgba(230, 30, 50, 0.24);
+$color-alpha-red-32: rgba(230, 30, 50, 0.32);
+$color-alpha-success-0: rgba(21, 190, 120, 0);
+$color-alpha-success-2: rgba(21, 190, 120, 0.02);
+$color-alpha-success-4: rgba(21, 190, 120, 0.04);
+$color-alpha-success-8: rgba(21, 190, 120, 0.08);
+$color-alpha-success-16: rgba(21, 190, 120, 0.16);
+$color-alpha-success-24: rgba(21, 190, 120, 0.24);
+$color-alpha-success-32: rgba(21, 190, 120, 0.32);
+$color-blue-dark-100: #040e18;
+$color-blue-dark-200: #081b30;
+$color-blue-dark-300: #113760;
+$color-blue-dark-400: #19528f;
+$color-blue-dark-500: #226ebf;
+$color-blue-dark-600: #2a89ef;
+$color-blue-dark-700: #55a1f2;
+$color-blue-dark-800: #7fb8f5;
+$color-blue-dark-900: #aad0f9;
+$color-blue-dark-1000: #d4e7fc;
+$color-blue-light-100: #eaf3fd;
+$color-blue-light-200: #d4e7fc;
+$color-blue-light-300: #aad0f9;
+$color-blue-light-400: #7fb8f5;
+$color-blue-light-500: #55a1f2;
+$color-blue-light-600: #2a89ef;
+$color-blue-light-700: #226ebf;
+$color-blue-light-800: #19528f;
+$color-blue-light-900: #113760;
+$color-blue-light-1000: #081b30;
+$color-brand-dark-100: #050d1a;
+$color-brand-dark-200: #0a1a33;
+$color-brand-dark-300: #143466;
+$color-brand-dark-400: #1f4d99;
+$color-brand-dark-500: #2967cc;
+$color-brand-dark-600: #3381ff;
+$color-brand-dark-700: #5c9aff;
+$color-brand-dark-800: #85b3ff;
+$color-brand-dark-900: #adcdff;
+$color-brand-dark-1000: #d6e6ff;
+$color-brand-light-100: #ebf2ff;
+$color-brand-light-200: #d6e6ff;
+$color-brand-light-300: #adcdff;
+$color-brand-light-400: #85b3ff;
+$color-brand-light-500: #5c9aff;
+$color-brand-light-600: #3381ff;
+$color-brand-light-700: #2967cc;
+$color-brand-light-800: #1f4d99;
+$color-brand-light-900: #143466;
+$color-brand-light-1000: #0a1a33;
+$color-green-dark-100: #02130c;
+$color-green-dark-200: #042618;
+$color-green-dark-300: #084c30;
+$color-green-dark-400: #0d7248;
+$color-green-dark-500: #119860;
+$color-green-dark-600: #15be78;
+$color-green-dark-700: #44cb93;
+$color-green-dark-800: #73d8ae;
+$color-green-dark-900: #a1e5c9;
+$color-green-dark-1000: #d0f2e4;
+$color-green-light-100: #e8f9f2;
+$color-green-light-200: #d0f2e4;
+$color-green-light-300: #a1e5c9;
+$color-green-light-400: #73d8ae;
+$color-green-light-500: #44cb93;
+$color-green-light-600: #15be78;
+$color-green-light-700: #119860;
+$color-green-light-800: #0d7248;
+$color-green-light-900: #084c30;
+$color-green-light-1000: #042618;
+$color-neutral-dark-0: #08090a;
+$color-neutral-dark-100: #0e0f12;
+$color-neutral-dark-200: #1b1f24;
+$color-neutral-dark-300: #292e36;
+$color-neutral-dark-400: #373e48;
+$color-neutral-dark-500: #444d5a;
+$color-neutral-dark-600: #5b6471;
+$color-neutral-dark-700: #7c838d;
+$color-neutral-dark-800: #9da2aa;
+$color-neutral-dark-900: #bdc1c6;
+$color-neutral-dark-1000: #dee0e3;
+$color-neutral-dark-1100: #ffffff;
+$color-neutral-light-0: #ffffff;
+$color-neutral-light-100: #f9fafb;
+$color-neutral-light-200: #f3f4f6;
+$color-neutral-light-300: #e5e7eb;
+$color-neutral-light-400: #d1d5db;
+$color-neutral-light-500: #9ca3af;
+$color-neutral-light-600: #6b7280;
+$color-neutral-light-700: #4b5563;
+$color-neutral-light-800: #374151;
+$color-neutral-light-900: #1f2937;
+$color-neutral-light-1000: #111827;
+$color-neutral-light-1100: #080b12;
+$color-orange-dark-100: #1a0d01;
+$color-orange-dark-200: #331b02;
+$color-orange-dark-300: #663504;
+$color-orange-dark-400: #995006;
+$color-orange-dark-500: #cc6a08;
+$color-orange-dark-600: #ff850a;
+$color-orange-dark-700: #ff9d3b;
+$color-orange-dark-800: #ffb66c;
+$color-orange-dark-900: #ffce9d;
+$color-orange-dark-1000: #ffe7ce;
+$color-orange-light-100: #fff3e7;
+$color-orange-light-200: #ffe7ce;
+$color-orange-light-300: #ffce9d;
+$color-orange-light-400: #ffb66c;
+$color-orange-light-500: #ff9d3b;
+$color-orange-light-600: #ff850a;
+$color-orange-light-700: #cc6a08;
+$color-orange-light-800: #995006;
+$color-orange-light-900: #663504;
+$color-orange-light-1000: #331b02;
+$color-pink-dark-100: #170513;
+$color-pink-dark-200: #2e0926;
+$color-pink-dark-300: #5d124c;
+$color-pink-dark-400: #8b1c73;
+$color-pink-dark-500: #ba2599;
+$color-pink-dark-600: #e82ebf;
+$color-pink-dark-700: #ed58cc;
+$color-pink-dark-800: #f182d9;
+$color-pink-dark-900: #f6abe5;
+$color-pink-dark-1000: #fad5f2;
+$color-pink-light-100: #fdeaf9;
+$color-pink-light-200: #fad5f2;
+$color-pink-light-300: #f6abe5;
+$color-pink-light-400: #f182d9;
+$color-pink-light-500: #ed58cc;
+$color-pink-light-600: #e82ebf;
+$color-pink-light-700: #ba2599;
+$color-pink-light-800: #8b1c73;
+$color-pink-light-900: #5d124c;
+$color-pink-light-1000: #2e0926;
+$color-purple-dark-100: #090613;
+$color-purple-dark-200: #140e2a;
+$color-purple-dark-300: #281c54;
+$color-purple-dark-400: #3b2b7e;
+$color-purple-dark-500: #462ab7;
+$color-purple-dark-600: #5530e8;
+$color-purple-dark-700: #9d8afe;
+$color-purple-dark-800: #baaefe;
+$color-purple-dark-900: #d4cdff;
+$color-purple-dark-1000: #eae7ff;
+$color-purple-light-100: #f5f3ff;
+$color-purple-light-200: #eae7ff;
+$color-purple-light-300: #cac2ff;
+$color-purple-light-400: #9c8bfe;
+$color-purple-light-500: #6f53fe;
+$color-purple-light-600: #5530e8;
+$color-purple-light-700: #3f1fc2;
+$color-purple-light-800: #392881;
+$color-purple-light-900: #281c54;
+$color-purple-light-1000: #140e2a;
+$color-red-dark-100: #170305;
+$color-red-dark-200: #2e060a;
+$color-red-dark-300: #5c0c14;
+$color-red-dark-400: #8a121e;
+$color-red-dark-500: #b81828;
+$color-red-dark-600: #e61e32;
+$color-red-dark-700: #eb4b5b;
+$color-red-dark-800: #f07884;
+$color-red-dark-900: #f5a5ad;
+$color-red-dark-1000: #fad2d6;
+$color-red-light-100: #fde9eb;
+$color-red-light-200: #fad2d6;
+$color-red-light-300: #f5a5ad;
+$color-red-light-400: #f07884;
+$color-red-light-500: #eb4b5b;
+$color-red-light-600: #e61e32;
+$color-red-light-700: #b81828;
+$color-red-light-800: #8a121e;
+$color-red-light-900: #5c0c14;
+$color-red-light-1000: #2e060a;
+$color-yellow-dark-100: #191102;
+$color-yellow-dark-200: #322203;
+$color-yellow-dark-300: #644406;
+$color-yellow-dark-400: #95670a;
+$color-yellow-dark-500: #c7890d;
+$color-yellow-dark-600: #f9ab10;
+$color-yellow-dark-700: #fabc40;
+$color-yellow-dark-800: #fbcd70;
+$color-yellow-dark-900: #fddd9f;
+$color-yellow-dark-1000: #feeecf;
+$color-yellow-light-100: #fef7e7;
+$color-yellow-light-200: #feeecf;
+$color-yellow-light-300: #fddd9f;
+$color-yellow-light-400: #fbcd70;
+$color-yellow-light-500: #fabc40;
+$color-yellow-light-600: #f9ab10;
+$color-yellow-light-700: #c7890d;
+$color-yellow-light-800: #95670a;
+$color-yellow-light-900: #644406;
+$color-yellow-light-1000: #322203;
+$space-0: 0px;
+$space-2: 2px;
+$space-4: 4px;
+$space-6: 6px;
+$space-8: 8px;
+$space-12: 12px;
+$space-16: 16px;
+$space-20: 20px;
+$space-24: 24px;
+$space-32: 32px;
+$space-40: 40px;
+$space-44: 44px;
+$space-48: 48px;
+$space-56: 56px;
+$space-64: 64px;
+$space-72: 72px;
+$space-80: 80px;
+$space-88: 88px;
+$space-96: 96px;
+$space-104: 104px;
+$space-112: 112px;
+$space-120: 120px;
+$space-128: 128px;
+$space-negative-2: -2px;
+$space-negative-4: -4px;
+$space-negative-6: -6px;
+$space-negative-8: -8px;
+$space-negative-12: -12px;
+$space-negative-16: -16px;
+$space-negative-20: -20px;
+$space-negative-24: -24px;
+$space-negative-32: -32px;
+$space-negative-40: -40px;
+$space-negative-44: -44px;
+$space-negative-48: -48px;
+$size-0: 0px;
+$size-2: 2px;
+$size-4: 4px;
+$size-6: 6px;
+$size-8: 8px;
+$size-12: 12px;
+$size-16: 16px;
+$size-20: 20px;
+$size-24: 24px;
+$size-32: 32px;
+$size-40: 40px;
+$size-44: 44px;
+$size-48: 48px;
+$size-56: 56px;
+$size-64: 64px;
+$size-72: 72px;
+$size-80: 80px;
+$size-88: 88px;
+$size-96: 96px;
+$size-104: 104px;
+$size-112: 112px;
+$size-120: 120px;
+$size-128: 128px;
+$shape-0: 0px;
+$shape-2: 2px;
+$shape-4: 4px;
+$shape-6: 6px;
+$shape-8: 8px;
+$shape-12: 12px;
+$shape-16: 16px;
+$shape-20: 20px;
+$shape-24: 24px;
+$shape-32: 32px;
+$shape-40: 40px;
+$shape-44: 44px;
+$shape-48: 48px;
+$shape-56: 56px;
+$shape-100: 100px;
+$familia-archivo: Archivo;
+$peso-thin: 100;
+$peso-extra-light: 200;
+$peso-light: 300;
+$peso-regular: 400;
+$peso-medium: 500;
+$peso-semibold: 600;
+$peso-bold: 700;
+$peso-extra-bold: 800;
+$peso-black: 900;
+$tamanho-0: 0px;
+$tamanho-2: 2px;
+$tamanho-4: 4px;
+$tamanho-6: 6px;
+$tamanho-8: 8px;
+$tamanho-10: 10px;
+$tamanho-12: 12px;
+$tamanho-14: 14px;
+$tamanho-16: 16px;
+$tamanho-18: 18px;
+$tamanho-20: 20px;
+$tamanho-24: 24px;
+$tamanho-32: 32px;
+$tamanho-40: 40px;
+$tamanho-48: 48px;
+$tamanho-56: 56px;
+$tamanho-64: 64px;
+$tamanho-72: 72px;
+$tamanho-80: 80px;
+$tamanho-88: 88px;
+$tamanho-96: 96px;
+$tamanho-104: 104px;
+$tamanho-999: 999px;
+$accent-blue: $color-blue-light-600; // Cor decorativa azul sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.
+$accent-blue-light: $color-blue-light-200; // Fundo decorativo azul suave para tags e avatares. NÃO usar como status.
+$accent-green: $color-green-light-600; // Cor decorativa verde sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.
+$accent-green-light: $color-green-light-100; // Fundo decorativo verde suave para tags e avatares. NÃO usar como status.
+$accent-orange: $color-orange-light-600; // Cor decorativa laranja sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.
+$accent-orange-light: $color-orange-light-100; // Fundo decorativo laranja suave para tags e avatares. NÃO usar como status.
+$accent-pink: $color-pink-light-600; // Cor decorativa rosa sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.
+$accent-pink-light: $color-pink-light-200; // Fundo decorativo rosa suave para tags e avatares. NÃO usar como status.
+$accent-purple: $color-purple-light-600; // Cor decorativa roxo sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.
+$accent-purple-light: $color-purple-light-200; // Fundo decorativo roxo suave para tags e avatares. NÃO usar como status.
+$accent-red: $color-red-light-600; // Cor decorativa vermelho sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.
+$accent-red-light: $color-red-light-100; // Fundo decorativo vermelho suave para tags e avatares. NÃO usar como status.
+$accent-yellow: $color-yellow-light-600; // Cor decorativa amarelo sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.
+$accent-yellow-light: $color-yellow-light-200; // Fundo decorativo amarelo suave para tags e avatares. NÃO usar como status.
+$action-disable-background: $color-neutral-light-300; // Fundo de elementos desabilitados.
+$action-disable-border: $color-neutral-light-400; // Borda de elementos desabilitados.
+$action-disable-content: $color-neutral-light-500; // Texto/ícone de elementos desabilitados.
+$action-focus-ring-brand: $color-alpha-brand-24; // Anel de foco (focus ring) para elementos brand.
+$action-focus-ring-error: $color-alpha-red-24; // Anel de foco para estados de erro/destrutivo. Pareie com feedback/error.
+$action-focus-ring-neutral: $color-alpha-dark-24; // Anel de foco neutro. Inverte para permanecer visível nos dois modos.
+$action-focus-ring-success: $color-alpha-success-24; // Anel de foco para estados de sucesso.
+$action-hover-on-color: $color-alpha-dark-16; // Overlay de hover sobre botões/superfícies coloridas sólidas (escurece levemente).
+$action-hover-on-color-secondary: $color-alpha-dark-4; // Overlay de hover mais leve sobre superfícies coloridas.
+$action-hover-on-dark: $color-alpha-light-16; // Overlay de hover sobre superfícies escuras.
+$border-inverse: $color-neutral-light-800; // Borda sobre superfícies de contraste oposto.
+$border-primary: $color-neutral-light-400; // Borda padrão de inputs, cards e divisores com ênfase.
+$border-secondary: $color-neutral-light-300; // Borda/divisor sutil para separações internas discretas.
+$brand-fill: $color-brand-light-600; // Cor forte da marca: fundo de botão primário, borda e ícone brand. Pareie texto com brand/onFill.
+$brand-on-fill: $color-neutral-light-0; // Texto/ícone sobre brand/fill (superfície brand sólida). Contraste calibrado.
+$brand-on-surface: $color-brand-light-600; // Texto/ícone brand sobre a página ou sobre brand/surface: links, ênfase brand.
+$brand-surface: $color-brand-light-100; // Superfície brand tingida suave: hover de outline, destaques leves. Pareie texto com brand/onSurface.
+$content-always-dark: $color-neutral-light-1100; // Texto/ícone sempre escuro nos dois modos.
+$content-always-light: $color-neutral-light-0; // Texto/ícone sempre claro nos dois modos.
+$content-inverse: $color-neutral-light-0; // Texto/ícone sobre background/inverse. Inverte entre os modos.
+$content-primary: $color-neutral-light-1100; // Cor principal de texto e ícones. Títulos e corpo em alto contraste.
+$content-secondary: $color-neutral-light-700; // Texto e ícones de apoio (hierarquia secundária): legendas, descrições, metadados de destaque.
+$content-tertiary: $color-neutral-light-500; // Texto de menor ênfase: placeholder, hints, metadados. Contraste baixo proposital; use só sobre níveis 1 e 2 de fundo.
+$feedback-error-fill: $color-red-light-600; // Cor forte de status error: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/error/onFill.
+$feedback-error-on-surface: $color-red-light-700; // Texto/ícone de status error sobre a surface ou sobre a página: validação, texto de alerta light.
+$feedback-error-surface: $color-red-light-100; // Superfície tingida suave de status error: alert light, badge, container, input em erro.
+$feedback-info-fill: $color-brand-light-600; // Cor forte de status info: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/info/onFill.
+$feedback-info-on-surface: $color-brand-light-700; // Texto/ícone de status info sobre a surface ou sobre a página: validação, texto de alerta light.
+$feedback-info-surface: $color-brand-light-100; // Superfície tingida suave de status info: alert light, badge, container, input em erro.
+$feedback-success-fill: $color-green-light-600; // Cor forte de status success: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/success/onFill.
+$feedback-success-on-surface: $color-green-light-800; // Texto/ícone de status success sobre a surface ou sobre a página: validação, texto de alerta light.
+$feedback-success-surface: $color-green-light-100; // Superfície tingida suave de status success: alert light, badge, container, input em erro.
+$feedback-warning-fill: $color-yellow-light-600; // Cor forte de status warning: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/warning/onFill.
+$feedback-warning-on-surface: $color-yellow-light-800; // Texto/ícone de status warning sobre a surface ou sobre a página: validação, texto de alerta light.
+$feedback-warning-surface: $color-yellow-light-100; // Superfície tingida suave de status warning: alert light, badge, container, input em erro.
+$surface-always-dark: $color-neutral-light-1100; // Fundo que permanece escuro nos dois modos, independente do tema.
+$surface-always-light: $color-neutral-light-0; // Fundo que permanece claro nos dois modos, independente do tema.
+$surface-inverse: $color-neutral-light-1100; // Fundo de contraste oposto ao tema (tooltip, snackbar). Inverte entre os modos.
+$surface-overlay: $color-alpha-dark-32; // Scrim de modal e bottom sheet: escurece o conteúdo atrás. Escuro nos dois modos.
+$surface-primary: $color-neutral-light-0; // Fundo base da página/tela. Nível 1 de elevação (mais ao fundo).
+$surface-secondary: $color-neutral-light-200; // Fundo de cards e superfícies sobre a página. Nível 2 de elevação.
+$surface-tertiary: $color-neutral-light-300; // Fundo de elementos aninhados dentro de cards: inputs, tiles, linhas. Nível 3 de elevação.
+$component-4: $size-4;
+$component-6: $size-6;
+$component-8: $size-8;
+$component-12: $size-12;
+$component-16: $size-16;
+$component-20: $size-20;
+$component-24: $size-24;
+$component-32: $size-32;
+$component-40: $size-40;
+$component-44: $size-44;
+$component-48: $size-48;
+$component-56: $size-56;
+$component-64: $size-64;
+$component-72: $size-72;
+$component-80: $size-80;
+$component-2xl: $shape-32;
+$component-2xs: $shape-4;
+$component-3xl: $shape-40;
+$component-3xs: $shape-2;
+$component-l: $shape-20;
+$component-m: $shape-16;
+$component-s: $shape-12;
+$component-xl: $shape-24;
+$component-xs: $shape-8;
+$gap-2xl: $space-32;
+$gap-2xs: $space-4;
+$gap-3xl: $space-40;
+$gap-3xs: $space-2;
+$gap-l: $space-20;
+$gap-m: $space-16;
+$gap-negative-2xl: $space-negative-32;
+$gap-negative-2xs: $space-negative-4;
+$gap-negative-3xl: $space-negative-40;
+$gap-negative-3xs: $space-negative-2;
+$gap-negative-l: $space-negative-20;
+$gap-negative-m: $space-negative-16;
+$gap-negative-s: $space-negative-12;
+$gap-negative-xl: $space-negative-24;
+$gap-negative-xs: $space-negative-8;
+$gap-s: $space-12;
+$gap-xl: $space-24;
+$gap-xs: $space-8;
+$padding-2xl: $space-32;
+$padding-2xs: $space-4;
+$padding-3xl: $space-40;
+$padding-3xs: $space-2;
+$padding-l: $space-20;
+$padding-m: $space-16;
+$padding-s: $space-12;
+$padding-xl: $space-24;
+$padding-xs: $space-8;
+$action-active: $brand-fill; // Estado ativo/selecionado. Referencia brand/fill (segue a cor da marca).
+$feedback-error-on-fill: $content-always-light; // Texto/ícone sobre feedback/error/fill (superfície sólida). Contraste calibrado.
+$feedback-info-on-fill: $content-always-light; // Texto/ícone sobre feedback/info/fill (superfície sólida). Contraste calibrado.
+$feedback-success-on-fill: $content-always-dark; // Texto/ícone sobre feedback/success/fill (superfície sólida). Contraste calibrado.
+$feedback-warning-on-fill: $content-always-dark; // Texto/ícone sobre feedback/warning/fill (superfície sólida). Contraste calibrado.

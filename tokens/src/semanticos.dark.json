@@ -4,72 +4,72 @@
     "blue": {
       "$type": "color",
       "$description": "Cor decorativa azul sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.",
-      "$value": "{color.blue.light.600}"
+      "$value": "{color.blue.dark.700}"
     },
     "blue-light": {
       "$type": "color",
       "$description": "Fundo decorativo azul suave para tags e avatares. NÃO usar como status.",
-      "$value": "{color.blue.light.200}"
+      "$value": "{color.blue.dark.300}"
     },
     "green": {
       "$type": "color",
       "$description": "Cor decorativa verde sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.",
-      "$value": "{color.green.light.600}"
+      "$value": "{color.green.dark.700}"
     },
     "green-light": {
       "$type": "color",
       "$description": "Fundo decorativo verde suave para tags e avatares. NÃO usar como status.",
-      "$value": "{color.green.light.100}"
+      "$value": "{color.green.dark.300}"
     },
     "orange": {
       "$type": "color",
       "$description": "Cor decorativa laranja sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.",
-      "$value": "{color.orange.light.600}"
+      "$value": "{color.orange.dark.700}"
     },
     "orange-light": {
       "$type": "color",
       "$description": "Fundo decorativo laranja suave para tags e avatares. NÃO usar como status.",
-      "$value": "{color.orange.light.100}"
+      "$value": "{color.orange.dark.300}"
     },
     "pink": {
       "$type": "color",
       "$description": "Cor decorativa rosa sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.",
-      "$value": "{color.pink.light.600}"
+      "$value": "{color.pink.dark.700}"
     },
     "pink-light": {
       "$type": "color",
       "$description": "Fundo decorativo rosa suave para tags e avatares. NÃO usar como status.",
-      "$value": "{color.pink.light.200}"
+      "$value": "{color.pink.dark.300}"
     },
     "purple": {
       "$type": "color",
       "$description": "Cor decorativa roxo sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.",
-      "$value": "{color.purple.light.600}"
+      "$value": "{color.purple.dark.700}"
     },
     "purple-light": {
       "$type": "color",
       "$description": "Fundo decorativo roxo suave para tags e avatares. NÃO usar como status.",
-      "$value": "{color.purple.light.200}"
+      "$value": "{color.purple.dark.300}"
     },
     "red": {
       "$type": "color",
       "$description": "Cor decorativa vermelho sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.",
-      "$value": "{color.red.light.600}"
+      "$value": "{color.red.dark.700}"
     },
     "red-light": {
       "$type": "color",
       "$description": "Fundo decorativo vermelho suave para tags e avatares. NÃO usar como status.",
-      "$value": "{color.red.light.100}"
+      "$value": "{color.red.dark.300}"
     },
     "yellow": {
       "$type": "color",
       "$description": "Cor decorativa amarelo sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.",
-      "$value": "{color.yellow.light.600}"
+      "$value": "{color.yellow.dark.700}"
     },
     "yellow-light": {
       "$type": "color",
       "$description": "Fundo decorativo amarelo suave para tags e avatares. NÃO usar como status.",
-      "$value": "{color.yellow.light.200}"
+      "$value": "{color.yellow.dark.300}"
     }
   },
   "action": {
@@ -81,17 +81,17 @@
     "disable-background": {
       "$type": "color",
       "$description": "Fundo de elementos desabilitados.",
-      "$value": "{color.neutral.light.300}"
+      "$value": "{color.neutral.dark.300}"
     },
     "disable-border": {
       "$type": "color",
       "$description": "Borda de elementos desabilitados.",
-      "$value": "{color.neutral.light.400}"
+      "$value": "{color.neutral.dark.400}"
     },
     "disable-content": {
       "$type": "color",
       "$description": "Texto/ícone de elementos desabilitados.",
-      "$value": "{color.neutral.light.500}"
+      "$value": "{color.neutral.dark.500}"
     },
     "focus-ring-brand": {
       "$type": "color",
@@ -106,7 +106,7 @@
     "focus-ring-neutral": {
       "$type": "color",
       "$description": "Anel de foco neutro. Inverte para permanecer visível nos dois modos.",
-      "$value": "{color.alpha.dark.24}"
+      "$value": "{color.alpha.light.24}"
     },
     "focus-ring-success": {
       "$type": "color",
@@ -126,78 +126,78 @@
     "hover-on-dark": {
       "$type": "color",
       "$description": "Overlay de hover sobre superfícies escuras.",
-      "$value": "{color.alpha.light.16}"
+      "$value": "{color.alpha.dark.16}"
     }
   },
   "border": {
     "inverse": {
       "$type": "color",
       "$description": "Borda sobre superfícies de contraste oposto.",
-      "$value": "{color.neutral.light.800}"
+      "$value": "{color.neutral.dark.800}"
     },
     "primary": {
       "$type": "color",
       "$description": "Borda padrão de inputs, cards e divisores com ênfase.",
-      "$value": "{color.neutral.light.400}"
+      "$value": "{color.neutral.dark.500}"
     },
     "secondary": {
       "$type": "color",
       "$description": "Borda/divisor sutil para separações internas discretas.",
-      "$value": "{color.neutral.light.300}"
+      "$value": "{color.neutral.dark.400}"
     }
   },
   "brand": {
     "fill": {
       "$type": "color",
       "$description": "Cor forte da marca: fundo de botão primário, borda e ícone brand. Pareie texto com brand/onFill.",
-      "$value": "{color.brand.light.600}"
+      "$value": "{color.brand.dark.700}"
     },
     "onFill": {
       "$type": "color",
       "$description": "Texto/ícone sobre brand/fill (superfície brand sólida). Contraste calibrado.",
-      "$value": "{color.neutral.light.0}"
+      "$value": "{color.neutral.dark.0}"
     },
     "onSurface": {
       "$type": "color",
       "$description": "Texto/ícone brand sobre a página ou sobre brand/surface: links, ênfase brand.",
-      "$value": "{color.brand.light.600}"
+      "$value": "{color.brand.dark.700}"
     },
     "surface": {
       "$type": "color",
       "$description": "Superfície brand tingida suave: hover de outline, destaques leves. Pareie texto com brand/onSurface.",
-      "$value": "{color.brand.light.100}"
+      "$value": "{color.brand.dark.300}"
     }
   },
   "content": {
     "alwaysDark": {
       "$type": "color",
       "$description": "Texto/ícone sempre escuro nos dois modos.",
-      "$value": "{color.neutral.light.1100}"
+      "$value": "{color.neutral.dark.0}"
     },
     "alwaysLight": {
       "$type": "color",
       "$description": "Texto/ícone sempre claro nos dois modos.",
-      "$value": "{color.neutral.light.0}"
+      "$value": "{color.neutral.dark.1100}"
     },
     "inverse": {
       "$type": "color",
       "$description": "Texto/ícone sobre background/inverse. Inverte entre os modos.",
-      "$value": "{color.neutral.light.0}"
+      "$value": "{color.neutral.dark.0}"
     },
     "primary": {
       "$type": "color",
       "$description": "Cor principal de texto e ícones. Títulos e corpo em alto contraste.",
-      "$value": "{color.neutral.light.1100}"
+      "$value": "{color.neutral.dark.1100}"
     },
     "secondary": {
       "$type": "color",
       "$description": "Texto e ícones de apoio (hierarquia secundária): legendas, descrições, metadados de destaque.",
-      "$value": "{color.neutral.light.700}"
+      "$value": "{color.neutral.dark.800}"
     },
     "tertiary": {
       "$type": "color",
       "$description": "Texto de menor ênfase: placeholder, hints, metadados. Contraste baixo proposital; use só sobre níveis 1 e 2 de fundo.",
-      "$value": "{color.neutral.light.500}"
+      "$value": "{color.neutral.dark.600}"
     }
   },
   "feedback": {
@@ -205,7 +205,7 @@
       "fill": {
         "$type": "color",
         "$description": "Cor forte de status error: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/error/onFill.",
-        "$value": "{color.red.light.600}"
+        "$value": "{color.red.dark.600}"
       },
       "onFill": {
         "$type": "color",
@@ -215,19 +215,19 @@
       "onSurface": {
         "$type": "color",
         "$description": "Texto/ícone de status error sobre a surface ou sobre a página: validação, texto de alerta light.",
-        "$value": "{color.red.light.700}"
+        "$value": "{color.red.dark.700}"
       },
       "surface": {
         "$type": "color",
         "$description": "Superfície tingida suave de status error: alert light, badge, container, input em erro.",
-        "$value": "{color.red.light.100}"
+        "$value": "{color.red.dark.300}"
       }
     },
     "info": {
       "fill": {
         "$type": "color",
         "$description": "Cor forte de status info: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/info/onFill.",
-        "$value": "{color.brand.light.600}"
+        "$value": "{color.brand.dark.600}"
       },
       "onFill": {
         "$type": "color",
@@ -237,19 +237,19 @@
       "onSurface": {
         "$type": "color",
         "$description": "Texto/ícone de status info sobre a surface ou sobre a página: validação, texto de alerta light.",
-        "$value": "{color.brand.light.700}"
+        "$value": "{color.brand.dark.700}"
       },
       "surface": {
         "$type": "color",
         "$description": "Superfície tingida suave de status info: alert light, badge, container, input em erro.",
-        "$value": "{color.brand.light.100}"
+        "$value": "{color.brand.dark.300}"
       }
     },
     "success": {
       "fill": {
         "$type": "color",
         "$description": "Cor forte de status success: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/success/onFill.",
-        "$value": "{color.green.light.600}"
+        "$value": "{color.green.dark.600}"
       },
       "onFill": {
         "$type": "color",
@@ -259,19 +259,19 @@
       "onSurface": {
         "$type": "color",
         "$description": "Texto/ícone de status success sobre a surface ou sobre a página: validação, texto de alerta light.",
-        "$value": "{color.green.light.800}"
+        "$value": "{color.green.dark.700}"
       },
       "surface": {
         "$type": "color",
         "$description": "Superfície tingida suave de status success: alert light, badge, container, input em erro.",
-        "$value": "{color.green.light.100}"
+        "$value": "{color.green.dark.300}"
       }
     },
     "warning": {
       "fill": {
         "$type": "color",
         "$description": "Cor forte de status warning: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/warning/onFill.",
-        "$value": "{color.yellow.light.600}"
+        "$value": "{color.yellow.dark.600}"
       },
       "onFill": {
         "$type": "color",
@@ -281,12 +281,12 @@
       "onSurface": {
         "$type": "color",
         "$description": "Texto/ícone de status warning sobre a surface ou sobre a página: validação, texto de alerta light.",
-        "$value": "{color.yellow.light.800}"
+        "$value": "{color.yellow.dark.700}"
       },
       "surface": {
         "$type": "color",
         "$description": "Superfície tingida suave de status warning: alert light, badge, container, input em erro.",
-        "$value": "{color.yellow.light.100}"
+        "$value": "{color.yellow.dark.300}"
       }
     }
   },
@@ -294,17 +294,17 @@
     "alwaysDark": {
       "$type": "color",
       "$description": "Fundo que permanece escuro nos dois modos, independente do tema.",
-      "$value": "{color.neutral.light.1100}"
+      "$value": "{color.neutral.dark.0}"
     },
     "alwaysLight": {
       "$type": "color",
       "$description": "Fundo que permanece claro nos dois modos, independente do tema.",
-      "$value": "{color.neutral.light.0}"
+      "$value": "{color.neutral.dark.1100}"
     },
     "inverse": {
       "$type": "color",
       "$description": "Fundo de contraste oposto ao tema (tooltip, snackbar). Inverte entre os modos.",
-      "$value": "{color.neutral.light.1100}"
+      "$value": "{color.neutral.dark.1100}"
     },
     "overlay": {
       "$type": "color",
@@ -314,17 +314,17 @@
     "primary": {
       "$type": "color",
       "$description": "Fundo base da página/tela. Nível 1 de elevação (mais ao fundo).",
-      "$value": "{color.neutral.light.0}"
+      "$value": "{color.neutral.dark.200}"
     },
     "secondary": {
       "$type": "color",
       "$description": "Fundo de cards e superfícies sobre a página. Nível 2 de elevação.",
-      "$value": "{color.neutral.light.200}"
+      "$value": "{color.neutral.dark.300}"
     },
     "tertiary": {
       "$type": "color",
       "$description": "Fundo de elementos aninhados dentro de cards: inputs, tiles, linhas. Nível 3 de elevação.",
-      "$value": "{color.neutral.light.300}"
+      "$value": "{color.neutral.dark.400}"
     }
   }
 }
