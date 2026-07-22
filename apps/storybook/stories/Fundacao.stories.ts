@@ -14,20 +14,24 @@ type Story = StoryObj;
 
 const SANS = "font-family:ui-sans-serif,system-ui,-apple-system,sans-serif";
 const MONO = "font-family:ui-monospace,'SF Mono',Menlo,monospace";
-// fundo neutro por trás das swatches: cores opacas ficam sólidas; tokens alpha
-// aparecem como um tom suave sobre a superfície do tema (sem poluição de xadrez)
-const SWATCH_BG = 'background:var(--surface-secondary,#f3f4f6)';
+// xadrez só nas swatches de tokens transparentes (alpha), pra revelar a transparência
+const CHECKER =
+  'background-image:linear-gradient(45deg,#c4c4c4 25%,transparent 25%),linear-gradient(-45deg,#c4c4c4 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#c4c4c4 75%),linear-gradient(-45deg,transparent 75%,#c4c4c4 75%);background-size:12px 12px;background-position:0 0,0 6px,6px -6px,-6px 0';
 
 const esc = (s = '') => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const refClean = (r = '') => r.replace(/[{}]/g, '');
 const refVar = (r: string) => '--' + refClean(r).replace(/\./g, '-');
 const refLabel = (r: string) => refClean(r).replace(/\./g, '/');
 const isPrimitiveRef = (r: string) => refClean(r).startsWith('color.');
+const isAlpha = (r?: string) => !!r && refClean(r).split('.').includes('alpha');
 
-// swatch: cor da CSS var sobre xadrez; dark=true força o tema escuro localmente
-const swatch = (cssVar: string, size = 46, dark = false) =>
-  `<span ${dark ? 'data-theme="dark"' : ''} style="display:inline-flex;width:${size}px;height:${size}px;border-radius:9px;border:1px solid rgba(128,128,128,.3);${SWATCH_BG};overflow:hidden;flex:0 0 auto">` +
-  `<span style="width:100%;height:100%;background:var(${cssVar})"></span></span>`;
+// swatch. opaco = cor sólida pura (sem fundo por trás). alpha = cor sobre xadrez.
+const swatch = (cssVar: string, size = 46, opts: { dark?: boolean; alpha?: boolean } = {}) => {
+  const base = `display:inline-flex;width:${size}px;height:${size}px;border-radius:9px;border:1px solid rgba(128,128,128,.3);overflow:hidden;flex:0 0 auto`;
+  const dt = opts.dark ? 'data-theme="dark"' : '';
+  if (!opts.alpha) return `<span ${dt} style="${base};background:var(${cssVar})"></span>`;
+  return `<span ${dt} style="${base};${CHECKER}"><span style="width:100%;height:100%;background:var(${cssVar})"></span></span>`;
+};
 
 // ------------------------------------------------------------------ PRIMITIVAS
 type Leaf = { varName: string; path: string[] };
@@ -60,7 +64,7 @@ export const Primitivas: Story = {
             ${leaves
               .map(
                 (l) => `<div style="text-align:center">
-              ${swatch(l.varName, 52)}
+              ${swatch(l.varName, 52, { alpha: l.path.includes('alpha') })}
               <div style="font-size:10px;color:var(--content-tertiary,#999);margin-top:3px">${l.path[l.path.length - 1]}</div>
             </div>`
               )
@@ -73,7 +77,6 @@ export const Primitivas: Story = {
 };
 
 // ------------------------------------------------------------------ SEMÂNTICAS
-// mapa path->referência do tema escuro
 const darkRef: Record<string, string> = {};
 (function walk(node: any, p: string[]) {
   for (const k of Object.keys(node)) {
@@ -88,7 +91,7 @@ const refLine = (icon: string, ref?: string) => {
   if (!ref) return '';
   const kind = isPrimitiveRef(ref) ? '' : ' <span style="opacity:.55">· semântica</span>';
   return `<div style="display:flex;align-items:center;gap:6px;${SANS};font-size:11px;color:var(--content-secondary,#667);margin-top:3px">
-    <span style="width:14px;text-align:center">${icon}</span>${swatch(refVar(ref), 15)}
+    <span style="width:14px;text-align:center">${icon}</span>${swatch(refVar(ref), 15, { alpha: isAlpha(ref) })}
     <code style="${MONO}">${refLabel(ref)}</code>${kind}</div>`;
 };
 
@@ -96,8 +99,8 @@ const card = (path: string[], desc: string | undefined, lightR: string, darkR?: 
   const cssVar = '--' + path.join('-');
   return `<div style="border:1px solid var(--border-secondary,#e5e7eb);border-radius:12px;padding:12px 14px;background:var(--surface-primary,#fff)">
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
-      <div style="text-align:center">${swatch(cssVar, 44)}<div style="${SANS};font-size:9px;color:var(--content-tertiary,#999);margin-top:2px">light</div></div>
-      <div style="text-align:center">${swatch(cssVar, 44, true)}<div style="${SANS};font-size:9px;color:var(--content-tertiary,#999);margin-top:2px">dark</div></div>
+      <div style="text-align:center">${swatch(cssVar, 44, { alpha: isAlpha(lightR) })}<div style="${SANS};font-size:9px;color:var(--content-tertiary,#999);margin-top:2px">light</div></div>
+      <div style="text-align:center">${swatch(cssVar, 44, { dark: true, alpha: isAlpha(darkR) })}<div style="${SANS};font-size:9px;color:var(--content-tertiary,#999);margin-top:2px">dark</div></div>
       <code style="${MONO};font-size:12.5px;font-weight:700;color:var(--content-primary,#111);word-break:break-word">${path.join('/')}</code>
     </div>
     ${desc ? `<p style="${SANS};font-size:12px;line-height:1.45;color:var(--content-secondary,#667);margin:0 0 8px">${esc(desc)}</p>` : ''}
