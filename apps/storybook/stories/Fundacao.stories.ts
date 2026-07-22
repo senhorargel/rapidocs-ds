@@ -5,8 +5,8 @@ import semanticosDark from '../../../tokens/src/semanticos.dark.json';
 
 /**
  * Vitrine da fundação — cores. Extraídas do Figma "Rapidocs System [Piloto]".
- * As swatches leem as CSS custom properties; as semânticas são mostradas nos
- * dois temas (light/dark) lado a lado, com a primitiva que cada uma referencia.
+ * As swatches leem as CSS custom properties; as semânticas são organizadas em
+ * tabela, com os dois temas (light/dark) e a primitiva que cada uma referencia.
  */
 const meta: Meta = { title: 'Fundação/Cores' };
 export default meta;
@@ -14,7 +14,7 @@ type Story = StoryObj;
 
 const SANS = "font-family:ui-sans-serif,system-ui,-apple-system,sans-serif";
 const MONO = "font-family:ui-monospace,'SF Mono',Menlo,monospace";
-// xadrez só nas swatches de tokens transparentes (alpha), pra revelar a transparência
+// xadrez só nas swatches de tokens transparentes (alpha)
 const CHECKER =
   'background-image:linear-gradient(45deg,#c4c4c4 25%,transparent 25%),linear-gradient(-45deg,#c4c4c4 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#c4c4c4 75%),linear-gradient(-45deg,transparent 75%,#c4c4c4 75%);background-size:12px 12px;background-position:0 0,0 6px,6px -6px,-6px 0';
 
@@ -25,8 +25,8 @@ const refLabel = (r: string) => refClean(r).replace(/\./g, '/');
 const isPrimitiveRef = (r: string) => refClean(r).startsWith('color.');
 const isAlpha = (r?: string) => !!r && refClean(r).split('.').includes('alpha');
 
-// swatch. opaco = cor sólida pura (sem fundo por trás). alpha = cor sobre xadrez.
-const swatch = (cssVar: string, size = 46, opts: { dark?: boolean; alpha?: boolean } = {}) => {
+// swatch. opaco = cor sólida pura; alpha = cor sobre xadrez.
+const swatch = (cssVar: string, size = 44, opts: { dark?: boolean; alpha?: boolean } = {}) => {
   const base = `display:inline-flex;width:${size}px;height:${size}px;border-radius:9px;border:1px solid rgba(128,128,128,.3);overflow:hidden;flex:0 0 auto`;
   const dt = opts.dark ? 'data-theme="dark"' : '';
   if (!opts.alpha) return `<span ${dt} style="${base};background:var(${cssVar})"></span>`;
@@ -76,7 +76,7 @@ export const Primitivas: Story = {
     </div>`,
 };
 
-// ------------------------------------------------------------------ SEMÂNTICAS
+// ------------------------------------------------------------------ SEMÂNTICAS (tabela)
 const darkRef: Record<string, string> = {};
 (function walk(node: any, p: string[]) {
   for (const k of Object.keys(node)) {
@@ -87,62 +87,71 @@ const darkRef: Record<string, string> = {};
   }
 })(semanticosDark as any, []);
 
-const refLine = (icon: string, ref?: string) => {
+const refMini = (icon: string, ref?: string) => {
   if (!ref) return '';
-  const kind = isPrimitiveRef(ref) ? '' : ' <span style="opacity:.55">· semântica</span>';
-  return `<div style="display:flex;align-items:center;gap:6px;${SANS};font-size:11px;color:var(--content-secondary,#667);margin-top:3px">
-    <span style="width:14px;text-align:center">${icon}</span>${swatch(refVar(ref), 15, { alpha: isAlpha(ref) })}
-    <code style="${MONO}">${refLabel(ref)}</code>${kind}</div>`;
+  const kind = isPrimitiveRef(ref) ? '' : ' <span style="opacity:.5">· sem</span>';
+  return `<div style="display:flex;align-items:center;gap:5px;${SANS};font-size:11px;color:var(--content-secondary,#667);white-space:nowrap;margin:1px 0">
+    <span>${icon}</span>${swatch(refVar(ref), 13, { alpha: isAlpha(ref) })}<code style="${MONO}">${refLabel(ref)}</code>${kind}</div>`;
 };
 
-const card = (path: string[], desc: string | undefined, lightR: string, darkR?: string) => {
-  const cssVar = '--' + path.join('-');
-  return `<div style="border:1px solid var(--border-secondary,#e5e7eb);border-radius:12px;padding:12px 14px;background:var(--surface-primary,#fff)">
-    <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
-      <div style="text-align:center">${swatch(cssVar, 44, { alpha: isAlpha(lightR) })}<div style="${SANS};font-size:9px;color:var(--content-tertiary,#999);margin-top:2px">light</div></div>
-      <div style="text-align:center">${swatch(cssVar, 44, { dark: true, alpha: isAlpha(darkR) })}<div style="${SANS};font-size:9px;color:var(--content-tertiary,#999);margin-top:2px">dark</div></div>
-      <div style="min-width:0">
-        <code style="${MONO};font-size:12.5px;font-weight:700;color:var(--content-primary,#111);word-break:break-word">${path.join('/')}</code>
-        <div style="margin-top:4px"><code title="Variável CSS do token" style="${MONO};font-size:11px;color:var(--content-secondary,#667);background:var(--surface-secondary,#f3f4f6);border:1px solid var(--border-secondary,#e5e7eb);padding:1px 6px;border-radius:5px;word-break:break-all">${cssVar}</code></div>
-      </div>
-    </div>
-    ${desc ? `<p style="${SANS};font-size:12px;line-height:1.45;color:var(--content-secondary,#667);margin:0 0 8px">${esc(desc)}</p>` : ''}
-    <div style="border-top:1px dashed var(--border-secondary,#eee);padding-top:6px">
-      ${refLine('☀️', lightR)}${refLine('🌙', darkR)}
-    </div>
-  </div>`;
-};
+const TD = 'padding:9px 10px;vertical-align:middle';
 
-function renderGroup(node: any, path: string[], depth: number): string {
+function rows(node: any, path: string[], depth: number): string {
   const keys = Object.keys(node).filter((k) => !k.startsWith('$'));
   const leaves = keys.filter((k) => node[k] && typeof node[k] === 'object' && '$value' in node[k]);
   const groups = keys.filter((k) => node[k] && typeof node[k] === 'object' && !('$value' in node[k]));
   let html = '';
-  if (leaves.length) {
-    html += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;margin:6px 0 16px">`;
-    html += leaves.map((k) => card([...path, k], node[k].$description, node[k].$value, darkRef[[...path, k].join('.')])).join('');
-    html += `</div>`;
+  for (const k of leaves) {
+    const full = [...path, k];
+    const cssVar = '--' + full.join('-');
+    const lightR = node[k].$value as string;
+    const dR = darkRef[full.join('.')];
+    html += `<tr style="border-top:1px solid var(--border-secondary,#eef1f4)">
+      <td style="${TD};text-align:center">${swatch(cssVar, 42, { alpha: isAlpha(lightR) })}</td>
+      <td style="${TD};text-align:center">${swatch(cssVar, 42, { dark: true, alpha: isAlpha(dR) })}</td>
+      <td style="${TD}">
+        <code style="${MONO};font-weight:700;font-size:12.5px;color:var(--content-primary,#111)">${full.join('/')}</code>
+        <div style="margin-top:3px"><code style="${MONO};font-size:11px;color:var(--content-secondary,#667);background:var(--surface-secondary,#f3f4f6);border:1px solid var(--border-secondary,#e5e7eb);padding:1px 6px;border-radius:5px">${cssVar}</code></div>
+      </td>
+      <td style="${TD}">${refMini('☀️', lightR)}${refMini('🌙', dR)}</td>
+      <td style="${TD};font-size:12px;line-height:1.45;color:var(--content-secondary,#667);min-width:220px">${esc(node[k].$description || '')}</td>
+    </tr>`;
   }
   for (const k of groups) {
     const title = k.replace(/-/g, ' ');
     if (depth === 0) {
-      html += `<h3 style="${SANS};font-size:19px;font-weight:800;margin:30px 0 8px;text-transform:capitalize;border-bottom:2px solid var(--brand-fill,#3381ff);padding-bottom:5px">${title}</h3>`;
+      html += `<tr><td colspan="5" style="padding:28px 10px 6px"><span style="${SANS};font-size:18px;font-weight:800;text-transform:capitalize;border-bottom:2px solid var(--brand-fill,#3381ff);padding-bottom:4px">${title}</span></td></tr>`;
     } else {
-      html += `<h4 style="${SANS};font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin:14px 0 2px;color:var(--content-tertiary,#8a94a6)">${title}</h4>`;
+      html += `<tr><td colspan="5" style="padding:14px 10px 0"><span style="${SANS};font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--content-tertiary,#8a94a6)">${title}</span></td></tr>`;
     }
-    html += renderGroup(node[k], [...path, k], depth + 1);
+    html += rows(node[k], [...path, k], depth + 1);
   }
   return html;
 }
 
+const TH = `${SANS};padding:6px 10px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--content-tertiary,#8a94a6)`;
+
 export const Semanticas: Story = {
   render: () => `
-    <div style="padding:20px;max-width:1120px;${SANS}">
+    <div style="padding:20px;${SANS}">
       <h2 style="font-size:22px;margin:0 0 4px">Cores semânticas</h2>
-      <p style="font-size:13px;color:var(--content-secondary,#667);margin:0 0 4px;max-width:660px">
-        Cada token mostra a cor no tema <strong>claro</strong> e <strong>escuro</strong> lado a lado, a descrição de uso,
-        e a <strong>primitiva referenciada</strong> (☀️ light · 🌙 dark). Agrupadas por família e subtipo.
+      <p style="font-size:13px;color:var(--content-secondary,#667);margin:0 0 16px;max-width:680px">
+        Tabela por token: cor no tema <strong>claro</strong> e <strong>escuro</strong>, o nome (caminho do Figma + variável CSS),
+        a <strong>primitiva referenciada</strong> (☀️ light · 🌙 dark) e o uso. Agrupadas por família e subtipo.
       </p>
-      ${renderGroup(semanticos as any, [], 0)}
+      <div style="overflow-x:auto">
+        <table style="border-collapse:collapse;width:100%;min-width:780px">
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid var(--border-primary,#d1d5db)">
+              <th style="${TH};text-align:center">Light</th>
+              <th style="${TH};text-align:center">Dark</th>
+              <th style="${TH}">Token</th>
+              <th style="${TH}">Referência</th>
+              <th style="${TH}">Uso</th>
+            </tr>
+          </thead>
+          <tbody>${rows(semanticos as any, [], 0)}</tbody>
+        </table>
+      </div>
     </div>`,
 };
