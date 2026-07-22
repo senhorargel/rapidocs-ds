@@ -101,7 +101,10 @@ const card = (path: string[], desc: string | undefined, lightR: string, darkR?: 
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
       <div style="text-align:center">${swatch(cssVar, 44, { alpha: isAlpha(lightR) })}<div style="${SANS};font-size:9px;color:var(--content-tertiary,#999);margin-top:2px">light</div></div>
       <div style="text-align:center">${swatch(cssVar, 44, { dark: true, alpha: isAlpha(darkR) })}<div style="${SANS};font-size:9px;color:var(--content-tertiary,#999);margin-top:2px">dark</div></div>
-      <code style="${MONO};font-size:12.5px;font-weight:700;color:var(--content-primary,#111);word-break:break-word">${path.join('/')}</code>
+      <div style="min-width:0">
+        <code style="${MONO};font-size:12.5px;font-weight:700;color:var(--content-primary,#111);word-break:break-word">${path.join('/')}</code>
+        <div style="margin-top:4px"><code title="Variável CSS do token" style="${MONO};font-size:11px;color:var(--content-secondary,#667);background:var(--surface-secondary,#f3f4f6);border:1px solid var(--border-secondary,#e5e7eb);padding:1px 6px;border-radius:5px;word-break:break-all">${cssVar}</code></div>
+      </div>
     </div>
     ${desc ? `<p style="${SANS};font-size:12px;line-height:1.45;color:var(--content-secondary,#667);margin:0 0 8px">${esc(desc)}</p>` : ''}
     <div style="border-top:1px dashed var(--border-secondary,#eee);padding-top:6px">
