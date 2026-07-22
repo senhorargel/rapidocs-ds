@@ -14,9 +14,9 @@ type Story = StoryObj;
 
 const SANS = "font-family:ui-sans-serif,system-ui,-apple-system,sans-serif";
 const MONO = "font-family:ui-monospace,'SF Mono',Menlo,monospace";
-// xadrez atrás das swatches para revelar transparência (tokens alpha)
-const CHECKER =
-  'background-image:linear-gradient(45deg,#c4c4c4 25%,transparent 25%),linear-gradient(-45deg,#c4c4c4 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#c4c4c4 75%),linear-gradient(-45deg,transparent 75%,#c4c4c4 75%);background-size:12px 12px;background-position:0 0,0 6px,6px -6px,-6px 0';
+// fundo neutro por trás das swatches: cores opacas ficam sólidas; tokens alpha
+// aparecem como um tom suave sobre a superfície do tema (sem poluição de xadrez)
+const SWATCH_BG = 'background:var(--surface-secondary,#f3f4f6)';
 
 const esc = (s = '') => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const refClean = (r = '') => r.replace(/[{}]/g, '');
@@ -26,7 +26,7 @@ const isPrimitiveRef = (r: string) => refClean(r).startsWith('color.');
 
 // swatch: cor da CSS var sobre xadrez; dark=true força o tema escuro localmente
 const swatch = (cssVar: string, size = 46, dark = false) =>
-  `<span ${dark ? 'data-theme="dark"' : ''} style="display:inline-flex;width:${size}px;height:${size}px;border-radius:9px;border:1px solid rgba(128,128,128,.35);${CHECKER};overflow:hidden;flex:0 0 auto">` +
+  `<span ${dark ? 'data-theme="dark"' : ''} style="display:inline-flex;width:${size}px;height:${size}px;border-radius:9px;border:1px solid rgba(128,128,128,.3);${SWATCH_BG};overflow:hidden;flex:0 0 auto">` +
   `<span style="width:100%;height:100%;background:var(${cssVar})"></span></span>`;
 
 // ------------------------------------------------------------------ PRIMITIVAS
