@@ -37,6 +37,7 @@ class RapidocsTokensDark {
     static const actionHoverOnColor = Color(0x2908090A); /** Overlay de hover sobre botões/superfícies coloridas sólidas (escurece levemente). */
     static const actionHoverOnColorSecondary = Color(0x0A08090A); /** Overlay de hover mais leve sobre superfícies coloridas. */
     static const actionHoverOnDark = Color(0x2908090A); /** Overlay de hover sobre superfícies escuras. */
+    static const borderBrand = Color(0xFF5C9AFF); /** Borda na cor da marca (outline de botões, inputs, etc.). */
     static const borderInverse = Color(0xFF9DA2AA); /** Borda sobre superfícies de contraste oposto. */
     static const borderPrimary = Color(0xFF444D5A); /** Borda padrão de inputs, cards e divisores com ênfase. */
     static const borderSecondary = Color(0xFF373E48); /** Borda/divisor sutil para separações internas discretas. */

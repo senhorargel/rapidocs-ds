@@ -144,6 +144,11 @@
       "$type": "color",
       "$description": "Borda/divisor sutil para separações internas discretas.",
       "$value": "{color.neutral.dark.400}"
+    },
+    "brand": {
+      "$type": "color",
+      "$description": "Borda na cor da marca (outline de botões, inputs, etc.).",
+      "$value": "{color.brand.dark.700}"
     }
   },
   "brand": {

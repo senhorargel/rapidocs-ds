@@ -353,6 +353,7 @@ $action-hover-on-dark: $color-alpha-light-16; // Overlay de hover sobre superfí
 $border-inverse: $color-neutral-light-800; // Borda sobre superfícies de contraste oposto.
 $border-primary: $color-neutral-light-400; // Borda padrão de inputs, cards e divisores com ênfase.
 $border-secondary: $color-neutral-light-300; // Borda/divisor sutil para separações internas discretas.
+$border-brand: $color-brand-light-600; // Borda na cor da marca (outline de botões, inputs, etc.).
 $brand-fill: $color-brand-light-600; // Cor forte da marca: fundo de botão primário, borda e ícone brand. Pareie texto com brand/onFill.
 $brand-on-fill: $color-neutral-light-0; // Texto/ícone sobre brand/fill (superfície brand sólida). Contraste calibrado.
 $brand-on-surface: $color-brand-light-600; // Texto/ícone brand sobre a página ou sobre brand/surface: links, ênfase brand.
