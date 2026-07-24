@@ -22,7 +22,7 @@
 - ✅ **Tipografia extraída**: família Archivo, 9 pesos, 23 tamanhos primitivos (`tipografia.json`) + os **28 text styles** (`text-styles.json`) gerando classes CSS `.text-*` (`tokens.typography.css`). Stories de Tipografia na vitrine.
 - 🎉 **Fundação (variables + text styles) COMPLETA e PUBLICADA na `main`** — vitrine online atualizada (PRs #2 e #3 mergeados em 2026-07-21).
 - ✅ **Logo adicionada**: 4 SVGs em `assets/logo/` (claro/escuro × 2) + story **Fundação/Marca** na vitrine.
-- ✅ **Componentes do Figma auditados/corrigidos** (2026-07-23): 208 bindings errados/órfãos corrigidos (refactor antigo `alert/*`→`feedback/*`, `background/*`→`surface/*` etc. deixou refs mortas), token `border/brand` recriado no Figma + sincronizado no repo. Arquivo 100% correto (0 órfãos, 0 foreground-como-fundo, 0 onFill errado).
+- ✅ **Componentes do Figma auditados/corrigidos** (2026-07-23/24): **cores** — 208 bindings errados/órfãos corrigidos (refactor antigo `alert/*`→`feedback/*`, `background/*`→`surface/*` etc. deixou refs mortas), token `border/brand` recriado (Figma + repo); **tipografia** — 257 textos "Archivo solto" vinculados aos text styles do arquivo (Label/*, Caption/10/Bold). Verificação: 0 órfãos, 0 foreground-como-fundo, 0 onFill-errado, 0 texto solto.
 - 🕒 **Componentes de código (Angular/Flutter)**: não iniciados — são Fase 2.
 
 ## 🎯 Próximo passo
@@ -52,6 +52,7 @@ Pontos abertos antes/durante: ver `.claude/debt.md` (raio Rounded/Sharp, text st
 
 ## 📓 Linha do tempo (histórico — mais recente no topo)
 
+- **2026-07-24** — Auditoria de **tipografia** dos componentes no Figma: 257 textos estavam com "Archivo solto" (sem text style). Todos vinculados ao text style equivalente (por tamanho+peso): Label/12–18/* e Caption/10/Bold (os 10px SemiBold, sem estilo próprio, mapeados p/ Bold). Verificação: 311/311 textos com estilo, 0 soltos.
 - **2026-07-23** — Auditoria de tokens dos componentes no Figma: 161 bindings órfãos (apontando pra tokens deletados de um refactor antigo: `alert/*`, `background/*`, `content/brand`, `border/brand`) + erros de on-color no Botão/Item_tab. Corrigidos **208 bindings**, recriado o token `border/brand` (Figma + repo). Verificação final: 0 órfãos / 0 foreground-como-fundo / 0 onFill-errado. Também: 4 logos em `assets/logo/` + story Fundação/Marca; cores semânticas em tabela na vitrine.
 - **2026-07-21** — Fundação levada pra produção: PR #2 (`feature/fundacao-tokens` → `develop`) e PR #3 (`develop` → `main`) mergeados; deploy OK, vitrine online atualizada. `develop` e `main` alinhadas.
 - **2026-07-21** — Extraída a **tipografia**: primitivas de fonte (`tipografia.json`: família Archivo, pesos, tamanhos) + 28 text styles (`text-styles.json`) → classes `.text-*` (`tokens.typography.css`), com stories na vitrine. Camada `Font-Size/*` cross-library pulada (ver debt). **Fundação completa.**

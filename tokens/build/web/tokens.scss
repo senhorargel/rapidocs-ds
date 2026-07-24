@@ -365,7 +365,7 @@ $content-primary: $color-neutral-light-1100; // Cor principal de texto e ícones
 $content-secondary: $color-neutral-light-700; // Texto e ícones de apoio (hierarquia secundária): legendas, descrições, metadados de destaque.
 $content-tertiary: $color-neutral-light-500; // Texto de menor ênfase: placeholder, hints, metadados. Contraste baixo proposital; use só sobre níveis 1 e 2 de fundo.
 $feedback-error-fill: $color-red-light-600; // Cor forte de status error: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/error/onFill.
-$feedback-error-on-surface: $color-red-light-700; // Texto/ícone de status error sobre a surface ou sobre a página: validação, texto de alerta light.
+$feedback-error-on-surface: $color-red-light-600; // Texto/ícone de status error sobre a surface ou sobre a página: validação, texto de alerta light.
 $feedback-error-surface: $color-red-light-100; // Superfície tingida suave de status error: alert light, badge, container, input em erro.
 $feedback-info-fill: $color-brand-light-600; // Cor forte de status info: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/info/onFill.
 $feedback-info-on-surface: $color-brand-light-700; // Texto/ícone de status info sobre a surface ou sobre a página: validação, texto de alerta light.
