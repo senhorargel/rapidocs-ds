@@ -220,7 +220,7 @@
       "onSurface": {
         "$type": "color",
         "$description": "Texto/ícone de status error sobre a surface ou sobre a página: validação, texto de alerta light.",
-        "$value": "{color.red.light.700}"
+        "$value": "{color.red.light.600}"
       },
       "surface": {
         "$type": "color",

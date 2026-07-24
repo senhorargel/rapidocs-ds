@@ -297,7 +297,7 @@ class RapidocsTokens {
     static const familiaArchivo = Archivo;
     static const feedbackErrorFill = Color(0xFFE61E32); /** Cor forte de status error: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/error/onFill. */
     static const feedbackErrorOnFill = Color(0xFFFFFFFF); /** Texto/ícone sobre feedback/error/fill (superfície sólida). Contraste calibrado. */
-    static const feedbackErrorOnSurface = Color(0xFFB81828); /** Texto/ícone de status error sobre a surface ou sobre a página: validação, texto de alerta light. */
+    static const feedbackErrorOnSurface = Color(0xFFE61E32); /** Texto/ícone de status error sobre a surface ou sobre a página: validação, texto de alerta light. */
     static const feedbackErrorSurface = Color(0xFFFDE9EB); /** Superfície tingida suave de status error: alert light, badge, container, input em erro. */
     static const feedbackInfoFill = Color(0xFF3381FF); /** Cor forte de status info: fundo de filled, ícone sobre superfície, borda/outline. Pareie texto com feedback/info/onFill. */
     static const feedbackInfoOnFill = Color(0xFFFFFFFF); /** Texto/ícone sobre feedback/info/fill (superfície sólida). Contraste calibrado. */
