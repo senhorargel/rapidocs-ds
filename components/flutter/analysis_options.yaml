@@ -1,0 +1,8 @@
+# Análise estática do pacote rapidocs_ds.
+#
+# Herda as regras oficiais do Flutter (pacote flutter_lints, declarado em
+# dev_dependencies). É o que o `dart analyze` / `flutter analyze` lê.
+#
+# Regra do projeto: não afrouxar essas regras para o código passar. Se uma regra
+# reclamar, o certo é arrumar o código.
+include: package:flutter_lints/flutter.yaml
