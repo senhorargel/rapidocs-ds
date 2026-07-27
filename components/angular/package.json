@@ -1,0 +1,45 @@
+{
+  "name": "@rapidocs/ds-angular",
+  "version": "0.1.0",
+  "description": "Componentes Angular do Design System Rapidocs, construidos sobre os tokens de @rapidocs/tokens",
+  "license": "MIT",
+  "keywords": [
+    "rapidocs",
+    "design-system",
+    "angular",
+    "componentes"
+  ],
+  "main": "./public-api.ts",
+  "types": "./public-api.ts",
+  "exports": {
+    ".": {
+      "types": "./public-api.ts",
+      "default": "./public-api.ts"
+    },
+    "./alert.css": "./alert/alert.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "public-api.ts",
+    "alert",
+    "README.md"
+  ],
+  "//peerDependencies": "@rapidocs/tokens NAO e opcional: o alert.css le 19 var(--token) de la (cor, padding, raio, tipografia). Sem o pacote o componente aparece sem fundo, sem espacamento e com a cor herdada da app. Por isso ele fica de fora de peerDependenciesMeta.optional - assim npm/pnpm avisam quem instalar so a biblioteca. Faixa >=0.0.1 (e nao ^0.0.1) porque, em semver, o caret em versoes 0.0.x trava no patch exato e barraria 0.0.2.",
+  "peerDependencies": {
+    "@angular/common": "^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0",
+    "@angular/core": "^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0",
+    "@angular/platform-browser": "^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0",
+    "@rapidocs/tokens": ">=0.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senhorargel/rapidocs-ds.git",
+    "directory": "components/angular"
+  }
+}

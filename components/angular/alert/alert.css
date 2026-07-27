@@ -1,0 +1,150 @@
+/*
+ * Rapidocs DS — Alert / Notification
+ * CSS canônico do componente. Fonte visual única: consumido pelo Storybook
+ * (vitrine) e pelo componente Angular. Todas as cores/espaços/raios vêm dos
+ * tokens (tokens.css / tokens.dark.css) — light e dark saem de graça.
+ *
+ * Extraído do Figma "Rapidocs System [Piloto]" → component set "alert-notification 1.0".
+ * Variações: Size (large|small) × Status (info|warning|success|error|update).
+ */
+
+.rds-alert {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;          /* Figma alinha ao topo (align MIN) nos DOIS tamanhos */
+  gap: var(--gap-s);                /* 12px */
+  padding: var(--padding-s);        /* 12px */
+  /* Raio 12px. O Figma usa radii/surface, que ainda não é exportado como token.
+     Atenção: --component-s NÃO é o mesmo token — os dois coincidem no modo
+     Default (12px) e no Sharp (2px), mas divergem no Rounded (component/s = 16px
+     contra radii/surface = 32px). Quando --radii-surface existir em
+     tokens/build/web/tokens.css, trocar aqui. */
+  border-radius: var(--component-s);
+  color: var(--content-primary);
+  /* Os text styles do DS têm letter-spacing 0. Sem declarar aqui, o Alert herdaria
+     o letter-spacing da aplicação e sairia fora do text style. Como a propriedade
+     é herdada, uma única declaração no container cobre título, corpo e link. */
+  letter-spacing: 0;
+}
+
+/* ---- Fundo por status (feedback/(status)/surface; update = surface/secondary) ---- */
+.rds-alert--info    { background: var(--feedback-info-surface); }
+.rds-alert--warning { background: var(--feedback-warning-surface); }
+.rds-alert--success { background: var(--feedback-success-surface); }
+.rds-alert--error   { background: var(--feedback-error-surface); }
+.rds-alert--update  { background: var(--surface-secondary); }
+
+/* ---- Ícone de status ---- */
+.rds-alert__icon {
+  flex: none;
+  display: inline-flex;
+  width: var(--component-20);       /* 20px no Large */
+  height: var(--component-20);
+}
+.rds-alert__icon > svg { display: block; width: 100%; height: 100%; }
+
+/* cor do ícone por status (feedback/(status)/fill; update = content/primary) */
+.rds-alert--info    .rds-alert__icon { color: var(--feedback-info-fill); }
+.rds-alert--warning .rds-alert__icon { color: var(--feedback-warning-fill); }
+.rds-alert--success .rds-alert__icon { color: var(--feedback-success-fill); }
+.rds-alert--error   .rds-alert__icon { color: var(--feedback-error-fill); }
+.rds-alert--update  .rds-alert__icon { color: var(--content-primary); }
+
+/* ---- Bloco de conteúdo ---- */
+.rds-alert__content {
+  flex: 1 1 auto;
+  min-width: 0;                     /* permite quebra/elipse do texto */
+  display: flex;
+  flex-direction: column;           /* Large: título / corpo / link empilhados */
+  gap: var(--padding-3xs);          /* 2px */
+}
+
+/* Tipografia = text styles do DS (Label/14 no Large). Embutida p/ o componente
+   ser autocontido; tamanho e peso vêm dos tokens primitivos (--tamanho-*,
+   --peso-*; o tokens.typography.css gerado usa literais). A altura de linha (1.45,
+   do text style Label do Figma) ainda não existe como token — quando existir,
+   trocar aqui. */
+.rds-alert__title { color: var(--content-primary); font-family: var(--familia-archivo), sans-serif; font-size: var(--tamanho-14); font-weight: var(--peso-bold); line-height: 1.45; } /* Label/14/Bold */
+.rds-alert__body  { color: var(--content-primary); font-family: var(--familia-archivo), sans-serif; font-size: var(--tamanho-14); font-weight: var(--peso-regular); line-height: 1.45; } /* Label/14/Regular */
+.rds-alert__link  { color: var(--content-primary); font-family: var(--familia-archivo), sans-serif; font-size: var(--tamanho-14); font-weight: var(--peso-semibold); line-height: 1.45; /* Label/14/SemiBold */
+  display: inline-block; width: fit-content; text-decoration: none; cursor: pointer; }
+
+/* Sublinha no hover E no foco (mesma regra do Flutter). O link desativado
+   (aria-disabled, sem destino e sem quem escute o clique — ver linkAtivo no
+   componente) não convida: sem sublinhado e com o cursor comum. Ele nem chega
+   a receber :focus-visible, porque sem href fica fora da ordem de Tab. */
+.rds-alert__link:hover:not([aria-disabled='true']),
+.rds-alert__link:focus-visible { text-decoration: underline; }
+.rds-alert__link[aria-disabled='true'] { cursor: default; }
+
+/* ---- Botão fechar ---- */
+.rds-alert__close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--component-20);
+  height: var(--component-20);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--content-primary);
+  cursor: pointer;
+  border-radius: var(--component-3xs);
+  position: relative;               /* ancora o ::before do alvo de toque */
+}
+.rds-alert__close > svg { display: block; width: 100%; height: 100%; }
+
+/* Alvo de toque ampliado (WCAG 2.5.8 pede 24x24 no mínimo).
+   O DESENHO do X continua em 20px (large) / 16px (small), como no Figma; quem
+   cresce é só a área clicável, através de um ::before invisível e fora do fluxo
+   — por isso nenhum gap e nenhuma medida do layout muda.
+   Área = ícone + 12px de folga de cada lado (o mesmo --padding-s do container):
+     large: 20 + 12 + 12 = 44px · small: 16 + 12 + 12 = 40px.
+   A folga é exatamente o padding do container, então a área encosta na borda do
+   alerta sem vazar para fora, e encosta no conteúdo sem cobrir o link (o gap
+   entre eles também é 12px). Fica abaixo dos 48px que o Material recomenda —
+   é o limite do layout do Figma, o mesmo teto do Flutter (dívida no README). */
+.rds-alert__close::before {
+  content: '';
+  position: absolute;
+  inset: calc(-1 * var(--padding-s));
+}
+
+/* Hover com token de interação (action/hover/onColorSecondary), o mesmo overlay
+   que o Flutter usa — antes era uma opacidade solta de 64%, que apagava o ícone
+   em vez de realçar o botão. Aproveita o border-radius já declarado.
+   Desativado não tem hover: sem quem escute (dismiss) o botão é inerte. */
+.rds-alert__close:hover:not(:disabled) { background: var(--action-hover-on-color-secondary); }
+.rds-alert__close:disabled { cursor: default; }
+
+/* ---- Anel de foco (link e botão fechar) ----
+   Antes usava --action-focus-ring-neutral, que é preto a 24% de opacidade: sobre
+   o fundo claro dos alertas o anel resultante ficava em 1,73:1 de contraste,
+   abaixo do mínimo de 3:1 que a WCAG 2.4.11 pede — praticamente invisível.
+   --content-primary é a mesma cor do texto do DS e já inverte no tema escuro,
+   então passa com folga nos 10 casos (5 status x 2 temas): 16,90:1 a 18,44:1 no
+   claro e 8,86:1 a 13,84:1 no escuro (o mínimo é o warning). */
+/* Espessura, folga e raio do anel usam o MESMO token (--component-3xs = 2px),
+   igual ao Flutter (RapidocsTokens.component3xs nas três medidas). */
+.rds-alert__link:focus-visible,
+.rds-alert__close:focus-visible {
+  outline: var(--component-3xs) solid var(--content-primary);
+  outline-offset: var(--component-3xs);
+  border-radius: var(--component-3xs);
+}
+
+/* ---- Variação Small (compacta, uma linha) ---- */
+.rds-alert--small .rds-alert__icon,
+.rds-alert--small .rds-alert__close { width: var(--component-16); height: var(--component-16); } /* 16px */
+.rds-alert--small .rds-alert__content {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--padding-xs);           /* 8px */
+}
+.rds-alert--small .rds-alert__title { flex: 1 1 auto; font-size: var(--tamanho-12); font-weight: var(--peso-regular); line-height: 1.45; } /* Label/12/Regular, empurra o link p/ a direita */
+/* O link do Small não pode encolher nem quebrar: como item flexível ele cedia
+   espaço para o título e virava duas linhas, o que fazia o alerta deixar de ser
+   uma linha (altura medida ia de 41px para 58,8px). */
+.rds-alert--small .rds-alert__link  { flex: none; white-space: nowrap; font-size: var(--tamanho-12); font-weight: var(--peso-bold); line-height: 1.45; } /* Label/12/Bold */
