@@ -1,0 +1,312 @@
+{/*
+  Instalação — página autônoma da Fundação (não está anexada a nenhuma story).
+
+  POR QUE ELA EXISTE: instalar o DS não é assunto de componente, é assunto do
+  design system inteiro. Antes isso vivia dentro da página do Alert, e cada
+  componente novo ia repetir os mesmos dois passos. Aqui mora UMA VEZ.
+
+  Os códigos ficam em ./vitrine/instalacao.ts (crase e `${}` dentro de MDX
+  quebram fácil) e espelham os arquivos reais dos pacotes — leia o cabeçalho
+  daquele arquivo para ver a lista do que foi conferido.
+*/}
+
+import { Meta, Source } from '@storybook/blocks';
+import {
+  ANGULAR_INSTALAR_PNPM,
+  ANGULAR_INSTALAR_PACKAGE_JSON,
+  ANGULAR_INSTALAR_WORKSPACE,
+  ANGULAR_TSCONFIG_PATHS,
+  ANGULAR_TOKENS_CSS,
+  ANGULAR_FONTE_HTML,
+  ANGULAR_CONFERIR_CONSOLE,
+  WEB_TEMA_ESCURO_HTML,
+  FLUTTER_PUBSPEC,
+  FLUTTER_PUB_GET,
+  FLUTTER_FONTE_PUBSPEC,
+  FLUTTER_IMPORT,
+  FLUTTER_TEMA_DART,
+  ATUALIZAR_ANGULAR,
+  ATUALIZAR_FLUTTER,
+} from './vitrine/instalacao';
+
+<Meta title="Fundação/Instalação" />
+
+{/* ── HERO ─────────────────────────────────────────────────────────────── */}
+
+<div
+  className="sb-unstyled"
+  style={{
+    fontFamily: 'var(--familia-archivo), ui-sans-serif, system-ui, sans-serif',
+    background: 'var(--surface-primary)',
+    border: '1px solid var(--border-primary)',
+    borderRadius: 16,
+    padding: '32px 36px',
+    marginBottom: 40,
+    color: 'var(--content-primary)',
+  }}
+>
+  <div
+    style={{
+      margin: 0,
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: '.08em',
+      textTransform: 'uppercase',
+      color: 'var(--content-tertiary)',
+    }}
+  >
+    Rapidocs DS · Fundação
+  </div>
+  <h1
+    style={{
+      margin: '10px 0 12px',
+      fontSize: 40,
+      lineHeight: 1.1,
+      fontWeight: 700,
+      color: 'var(--content-primary)',
+    }}
+  >
+    Instalação
+  </h1>
+  <div
+    style={{
+      margin: 0,
+      maxWidth: 660,
+      fontSize: 15,
+      lineHeight: 1.6,
+      color: 'var(--content-secondary)',
+    }}
+  >
+    Aqui você instala o design system <strong>inteiro</strong> — os tokens da
+    fundação e a biblioteca de componentes da sua plataforma. É feito{' '}
+    <strong>uma vez por projeto</strong>: depois disso, cada componente novo é só
+    importar e usar, sem nenhum passo de configuração.
+  </div>
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 20 }}>
+    <span
+      style={{
+        fontSize: 12,
+        fontWeight: 600,
+        padding: '4px 12px',
+        borderRadius: 999,
+        border: '1px solid var(--border-primary)',
+        background: 'var(--surface-secondary)',
+        color: 'var(--content-primary)',
+      }}
+    >
+      Web · Angular 17+ · @rapidocs/ds-angular
+    </span>
+    <span
+      style={{
+        fontSize: 12,
+        fontWeight: 600,
+        padding: '4px 12px',
+        borderRadius: 999,
+        border: '1px solid var(--border-primary)',
+        background: 'var(--surface-secondary)',
+        color: 'var(--content-primary)',
+      }}
+    >
+      Mobile · Flutter 3.10+ · rapidocs_ds
+    </span>
+    <span
+      style={{
+        fontSize: 12,
+        fontWeight: 600,
+        padding: '4px 12px',
+        borderRadius: 999,
+        border: '1px solid var(--border-primary)',
+        background: 'var(--surface-secondary)',
+        color: 'var(--content-primary)',
+      }}
+    >
+      Distribuição: Git (repositório público)
+    </span>
+  </div>
+</div>
+
+{/* ── O QUE VOCÊ VAI INSTALAR ──────────────────────────────────────────── */}
+
+## O que você vai instalar
+
+São dois pacotes: a fundação (que toda plataforma usa) e os componentes da sua
+plataforma. **A regra de ouro do DS:** token é compartilhado, componente não.
+
+| Pacote | Plataforma | Para que serve |
+| --- | --- | --- |
+| `@rapidocs/tokens` | as duas | A fundação gerada do Figma: cores, espaços, raios e tipografia. É de onde vem toda a aparência — inclusive o tema escuro. Na web ele entra como CSS; no Flutter ele já vem **dentro** do pacote `rapidocs_ds`, não precisa instalar à parte. |
+| `@rapidocs/ds-angular` | Web (Angular 17+) | Os componentes web, ex. `<rds-alert>`. Depende de `@rapidocs/tokens` para ter cor e medida. |
+| `rapidocs_ds` | Mobile (Flutter 3.10+) | Os componentes mobile, ex. `RdsAlert` — mais os tokens já embutidos. Um import só. |
+
+{/* ── ANGULAR ──────────────────────────────────────────────────────────── */}
+
+## Angular (web)
+
+Quatro passos, uma vez por projeto.
+
+### 1. Instalar o pacote
+
+Na Fase 1 os pacotes vêm direto do repositório público
+[senhorargel/rapidocs-ds](https://github.com/senhorargel/rapidocs-ds) no GitHub
+(publicar no npm fica para a Fase 2). Instale a biblioteca **e** os tokens — sem
+os tokens o componente aparece sem cor e sem espaçamento:
+
+<Source language="bash" code={ANGULAR_INSTALAR_PNPM} dark />
+
+O resultado no `package.json` da sua aplicação:
+
+<Source language="json" code={ANGULAR_INSTALAR_PACKAGE_JSON} dark />
+
+Se a sua app vive **dentro deste monorepo**, use a referência de workspace em vez
+do endereço do Git:
+
+<Source language="json" code={ANGULAR_INSTALAR_WORKSPACE} dark />
+
+A biblioteca é publicada como código TypeScript, sem passo de build
+intermediário: o compilador da sua aplicação lê os arquivos direto. Se o seu
+projeto não resolver o pacote por conta própria, aponte o caminho no
+`tsconfig.json`:
+
+<Source language="json" code={ANGULAR_TSCONFIG_PATHS} dark />
+
+### 2. Ligar os tokens
+
+Este é o passo que dá **aparência** a tudo. Os três arquivos de token entram no
+CSS global da aplicação (`styles.css` ou `styles.scss`) — cor, espaço, raio e
+tipografia de todos os componentes do DS saem daqui:
+
+<Source language="css" code={ANGULAR_TOKENS_CSS} dark />
+
+`@rapidocs/tokens` é declarado como *peer dependency* **não opcional** de
+`@rapidocs/ds-angular`: se você instalar só a biblioteca, o pnpm avisa que falta
+o pacote de tokens em vez de deixar o componente aparecer sem cor.
+
+O CSS de cada componente já vem junto do componente — não precisa importar à
+parte.
+
+### 3. Carregar a fonte Archivo
+
+Os tokens só dizem o **nome** da família (`--familia-archivo`); eles não baixam a
+fonte. A Archivo vem do Google Fonts (ou de um arquivo local, se preferir):
+
+<Source language="html" code={ANGULAR_FONTE_HTML} dark />
+
+### 4. Conferir se funcionou
+
+O teste mais rápido é olhar: coloque um componente do DS na tela. Se ele
+aparecer **sem cor de fundo, sem espaçamento e com a fonte do sistema**, o
+problema é quase sempre o passo 2 — os tokens não chegaram ao CSS global. Para
+confirmar sem adivinhar:
+
+<Source language="javascript" code={ANGULAR_CONFERIR_CONSOLE} dark />
+
+Se a fonte estiver diferente do Figma mas a cor e o espaçamento estiverem certos,
+o que faltou foi o passo 3.
+
+{/* ── FLUTTER ──────────────────────────────────────────────────────────── */}
+
+## Flutter (mobile)
+
+Mesma lógica, quatro passos. Aqui os tokens já vêm dentro do pacote — não existe
+pacote de tokens separado para instalar.
+
+### 1. Declarar a dependência
+
+No `pubspec.yaml` da **sua app**, dentro de `dependencies:`. O `path:` aponta a
+pasta do pacote dentro do repositório:
+
+<Source language="yaml" code={FLUTTER_PUBSPEC} dark />
+
+### 2. Baixar o pacote
+
+<Source language="bash" code={FLUTTER_PUB_GET} dark />
+
+Nada de copiar arquivo na mão: o commit exato que você baixou fica gravado no
+`pubspec.lock`.
+
+### 3. Registrar a fonte Archivo
+
+Como na web, o token só aponta o nome da família — a fonte é registrada **na
+app**. No Flutter isso acontece no próprio `pubspec.yaml`, com os arquivos `.ttf`
+nos assets da app:
+
+<Source language="yaml" code={FLUTTER_FONTE_PUBSPEC} dark />
+
+Sem isso o Flutter cai no fallback do sistema e a tipografia foge do Figma. (Os
+ícones do DS já vêm dentro do pacote — esses você não precisa registrar.)
+
+### 4. Importar
+
+Um import único traz tudo: tokens, resolução de claro/escuro e componentes.
+
+<Source language="dart" code={FLUTTER_IMPORT} dark />
+
+Ele expõe `RapidocsTokens` (cores do modo claro e todas as medidas),
+`RapidocsTokensDark` (cores do modo escuro), `RapidocsCores` (a camada que decide
+qual das duas usar) e os componentes, como `RdsAlert`.
+
+{/* ── TEMA CLARO E ESCURO ──────────────────────────────────────────────── */}
+
+## Tema claro e escuro
+
+A aparência dos componentes vem **100% de token** — nenhum componente tem cor
+escrita no código. Consequência prática: o tema alterna sem que você mexa em
+componente nenhum, e não existe propriedade "dark" para passar.
+
+Na **web**, `@rapidocs/tokens/css-dark` declara as cores dentro do seletor
+`[data-theme="dark"]`. Basta pôr esse atributo no elemento raiz da página (é
+exatamente o que a barra **Tema** desta vitrine faz):
+
+<Source language="html" code={WEB_TEMA_ESCURO_HTML} dark />
+
+No **Flutter**, o modo é resolvido por `RapidocsCores`, que lê o
+`Theme.of(context).brightness` da sua app. Se a app troca para `ThemeData.dark()`,
+os componentes acompanham sozinhos. Só **cor** tem modo: medida (padding, gap,
+raio, tamanho de ícone) é igual nos dois.
+
+<Source language="dart" code={FLUTTER_TEMA_DART} dark />
+
+{/* ── ATUALIZANDO ──────────────────────────────────────────────────────── */}
+
+## Atualizando
+
+Como a instalação é por Git, "versão" aqui é o **commit** do repositório que você
+baixou. Quem instala apontando para `main` fica preso ao commit gravado no
+arquivo de lock até pedir para atualizar — nada muda embaixo de você sem aviso.
+
+Web:
+
+<Source language="bash" code={ATUALIZAR_ANGULAR} dark />
+
+Mobile:
+
+<Source language="bash" code={ATUALIZAR_FLUTTER} dark />
+
+Se você preferir travar numa versão fixa em vez de seguir a `main`, troque o
+`ref:` (Flutter) ou o trecho depois do `#` (Angular) pelo nome de uma tag do
+repositório. **Hoje o repositório ainda não tem tags publicadas** — por
+enquanto, `main` é o único ref disponível.
+
+{/* ── ONDE VIVE O QUÊ ──────────────────────────────────────────────────── */}
+
+## Onde vive o quê
+
+Se você quiser abrir o código, é aqui:
+
+| Caminho no repositório | O que é |
+| --- | --- |
+| `tokens/src/` | Os tokens como saem do Figma (formato DTCG). É a fonte da verdade. |
+| `tokens/build/web/` | O que o Angular consome: `tokens.css`, `tokens.dark.css`, `tokens.typography.css`, `tokens.scss`. Gerado — não edite na mão. |
+| `components/angular/` | O pacote `@rapidocs/ds-angular`. Porta de entrada: `public-api.ts`. |
+| `components/flutter/` | O pacote `rapidocs_ds`. Porta de entrada: `lib/rapidocs_ds.dart`. Os tokens Dart gerados ficam em `lib/src/tokens/`. |
+| `apps/storybook/` | Esta vitrine. |
+
+Para regerar os arquivos de token depois de mexer no Figma, na raiz do
+repositório: `corepack pnpm build:tokens`.
+
+{/* ── RODAPÉ ───────────────────────────────────────────────────────────── */}
+
+---
+
+Depois de instalar, vá em **Componentes** para ver cada componente, com
+playground e código.
