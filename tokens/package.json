@@ -11,10 +11,9 @@
     "./css": "./build/web/tokens.css",
     "./css-dark": "./build/web/tokens.dark.css",
     "./css-typography": "./build/web/tokens.typography.css",
-    "./scss": "./build/web/tokens.scss",
-    "./dart": "./build/dart/tokens.dart",
-    "./dart-dark": "./build/dart/tokens.dark.dart"
+    "./scss": "./build/web/tokens.scss"
   },
+  "//dart": "As saidas Dart agora nascem dentro do pacote Flutter (components/flutter/lib/src/tokens/) e sao consumidas por 'package:rapidocs_ds/...', nao por este package.json.",
   "scripts": {
     "build": "node build-tokens.mjs"
   },

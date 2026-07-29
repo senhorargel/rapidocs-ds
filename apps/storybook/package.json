@@ -6,11 +6,17 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+  "//dependencies": "A vitrine consome os pacotes do DS como qualquer app do time: pelo nome, via workspace. Rode 'corepack pnpm install' para o link existir.",
+  "dependencies": {
+    "@rapidocs/ds-angular": "workspace:*",
+    "@rapidocs/tokens": "workspace:*"
+  },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/blocks": "^8.4.7",
     "@storybook/html": "^8.4.7",
     "@storybook/html-vite": "^8.4.7",
+    "remark-gfm": "^4.0.1",
     "storybook": "^8.4.7",
     "vite": "^5.4.11"
   }

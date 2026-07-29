@@ -8,7 +8,9 @@ import semanticosDark from '../../../tokens/src/semanticos.dark.json';
  * As swatches leem as CSS custom properties; as semânticas são organizadas em
  * tabela, com os dois temas (light/dark) e a primitiva que cada uma referencia.
  */
-const meta: Meta = { title: 'Fundação/Cores' };
+const meta: Meta = {
+  title: 'Fundação/Cores',
+};
 export default meta;
 type Story = StoryObj;
 

@@ -1,6 +1,6 @@
 {
-  "$type": "color",
   "accent": {
+    "$type": "color",
     "blue": {
       "$type": "color",
       "$description": "Cor decorativa azul sólida. Uso estético (gráficos, avatares, tags). NÃO usar como status — para status use feedback/*.",
@@ -73,6 +73,7 @@
     }
   },
   "action": {
+    "$type": "color",
     "active": {
       "$type": "color",
       "$description": "Estado ativo/selecionado. Referencia brand/fill (segue a cor da marca).",
@@ -130,6 +131,7 @@
     }
   },
   "border": {
+    "$type": "color",
     "inverse": {
       "$type": "color",
       "$description": "Borda sobre superfícies de contraste oposto.",
@@ -152,6 +154,7 @@
     }
   },
   "brand": {
+    "$type": "color",
     "fill": {
       "$type": "color",
       "$description": "Cor forte da marca: fundo de botão primário, borda e ícone brand. Pareie texto com brand/onFill.",
@@ -174,6 +177,7 @@
     }
   },
   "content": {
+    "$type": "color",
     "alwaysDark": {
       "$type": "color",
       "$description": "Texto/ícone sempre escuro nos dois modos.",
@@ -206,6 +210,7 @@
     }
   },
   "feedback": {
+    "$type": "color",
     "error": {
       "fill": {
         "$type": "color",
@@ -296,6 +301,7 @@
     }
   },
   "surface": {
+    "$type": "color",
     "alwaysDark": {
       "$type": "color",
       "$description": "Fundo que permanece escuro nos dois modos, independente do tema.",

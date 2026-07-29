@@ -1,0 +1,30 @@
+<!--
+  Fonte Archivo — a família oficial do Rapidocs DS.
+
+  Carregada AQUI (e não dentro de uma story) para valer em TODA a vitrine: assim
+  qualquer componente que use `var(--familia-archivo)` — Alert, e todos os que
+  vierem depois — renderiza com o desenho real do Figma, em vez de cair na fonte
+  de fallback do sistema.
+
+  Mesma família e mesmos pesos (100..900) que as stories de Fundação/Tipografia
+  já usavam localmente.
+
+  Este arquivo é injetado automaticamente pelo Storybook no <head> do preview
+  (iframe.html) — não precisa importar em lugar nenhum.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+>
+
+<style>
+  /* Fonte padrão do palco das stories. Componentes que declaram a família via
+     token continuam mandando; isso só evita que textos auxiliares (legendas,
+     títulos de seção) apareçam em Times/Arial. */
+  body,
+  #storybook-root {
+    font-family: var(--familia-archivo), ui-sans-serif, system-ui, sans-serif;
+  }
+</style>

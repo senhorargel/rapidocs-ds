@@ -1,5 +1,4 @@
 {
-  "$type": "dimension",
   "component": {
     "2xl": {
       "$value": "{shape.32}",
