@@ -16,6 +16,12 @@ Extração das cores do Figma "Rapidocs System [Piloto]" (coleções `.primitive
 - `tokens/build-tokens.mjs` — novo build (substitui `style-dictionary.config.mjs`); 2 instâncias SD (light + dark).
 - `tokens/build/web/tokens.css` (`:root`) + `tokens.dark.css` (`[data-theme="dark"]`) + `tokens.scss`.
 - `tokens/build/dart/tokens.dart` (`RapidocsColors`) + `tokens.dark.dart` (`RapidocsColorsDark`).
+  > **Nota de migração (2026-07-26):** este caminho **não existe mais**. Os tokens Dart passaram a
+  > ser gerados dentro do pacote Flutter, em `components/flutter/lib/src/tokens/tokens.dart` e
+  > `tokens.dark.dart`, e as classes hoje se chamam **`RapidocsTokens`** e **`RapidocsTokensDark`**
+  > (o nome já havia mudado de `RapidocsColors` para `RapidocsTokens` ainda em 2026-07-21, quando o
+  > build passou a emitir também as dimensões). A linha acima fica como registro do que valia na
+  > data desta feature. Detalhes em `.claude/patterns.md` e `.claude/debt.md`.
 - `apps/storybook/stories/Fundacao.stories.ts` — lê os tokens dinamicamente (escalas + semânticas c/ descrição).
 - `apps/storybook/.storybook/preview.ts` — importa CSS light+dark + toggle de tema.
 

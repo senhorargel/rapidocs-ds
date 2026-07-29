@@ -8,7 +8,9 @@ import forma from '../../../tokens/src/forma.json';
  * extraídas do Figma. As barras/quadrados leem as CSS custom properties, então
  * refletem o valor real (inclusive as semânticas que referenciam primitivas).
  */
-const meta: Meta = { title: 'Fundação/Escala & Forma' };
+const meta: Meta = {
+  title: 'Fundação/Escala & Forma',
+};
 export default meta;
 type Story = StoryObj;
 

@@ -9,7 +9,9 @@ import escuro2 from '../../../assets/logo/logo-escuro-2.svg?raw';
  * Vitrine da fundação — Marca. As logos do Rapidocs em SVG, nas versões para
  * fundo claro e escuro. Cada uma é mostrada sobre o fundo a que se destina.
  */
-const meta: Meta = { title: 'Fundação/Marca' };
+const meta: Meta = {
+  title: 'Fundação/Marca',
+};
 export default meta;
 type Story = StoryObj;
 

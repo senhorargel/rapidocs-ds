@@ -7,7 +7,9 @@ import tipografia from '../../../tokens/src/tipografia.json';
  * e as primitivas de fonte (pesos e tamanhos). A fonte Archivo é carregada do
  * Google Fonts para o preview refletir o desenho real.
  */
-const meta: Meta = { title: 'Fundação/Tipografia' };
+const meta: Meta = {
+  title: 'Fundação/Tipografia',
+};
 export default meta;
 type Story = StoryObj;
 

@@ -1,0 +1,39 @@
+# Pacote Dart/Flutter do Design System do Rapidocs.
+#
+# O time instala isso no pubspec.yaml da app (ver README.md) e importa tudo por
+# um nome só: package:rapidocs_ds/rapidocs_ds.dart
+name: rapidocs_ds
+description: >-
+  Componentes Flutter do Design System do Rapidocs, ligados aos tokens gerados
+  a partir do Figma pelo Style Dictionary.
+version: 0.1.0
+repository: https://github.com/senhorargel/rapidocs-ds
+
+# Fase 1 o consumo é via Git; publicar no pub.dev fica para a Fase 2.
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Desenha os SVGs oficiais do DS — o mesmo traço do Figma e da versão web.
+  flutter_svg: ^2.0.9
+
+# Só para desenvolver o pacote — quem instala o DS não baixa nada disso.
+dev_dependencies:
+  # Roda os testes de widget de test/ (`flutter test`).
+  flutter_test:
+    sdk: flutter
+  # Regras de análise estática oficiais do Flutter (ver analysis_options.yaml).
+  flutter_lints: ^3.0.0
+
+flutter:
+  # Ícones do Alert.
+  # Um pacote Dart só empacota assets que estão dentro dele, por isso estes SVGs
+  # são uma CÓPIA SINCRONIZADA de assets/icons/alert/ na raiz do repositório
+  # (ver README.md, seção "Dívidas conhecidas").
+  assets:
+    - assets/icons/alert/

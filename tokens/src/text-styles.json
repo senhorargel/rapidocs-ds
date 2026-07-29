@@ -1,6 +1,6 @@
 {
-  "$type": "typography",
   "title-web": {
+    "$type": "typography",
     "xxg-large": { "$value": { "fontFamily": "Archivo", "fontWeight": 600, "fontSize": "88px", "lineHeight": "1.3", "letterSpacing": "0" } },
     "xx-large": { "$value": { "fontFamily": "Archivo", "fontWeight": 600, "fontSize": "72px", "lineHeight": "1.3", "letterSpacing": "0" } },
     "x-large": { "$value": { "fontFamily": "Archivo", "fontWeight": 600, "fontSize": "56px", "lineHeight": "1.3", "letterSpacing": "0" } },
@@ -9,12 +9,14 @@
     "small": { "$value": { "fontFamily": "Archivo", "fontWeight": 600, "fontSize": "32px", "lineHeight": "1.3", "letterSpacing": "0" } }
   },
   "title-app": {
+    "$type": "typography",
     "x-large": { "$value": { "fontFamily": "Archivo", "fontWeight": 600, "fontSize": "48px", "lineHeight": "1.2", "letterSpacing": "0" } },
     "large": { "$value": { "fontFamily": "Archivo", "fontWeight": 600, "fontSize": "40px", "lineHeight": "1.2", "letterSpacing": "0" } },
     "medium": { "$value": { "fontFamily": "Archivo", "fontWeight": 600, "fontSize": "32px", "lineHeight": "1.2", "letterSpacing": "0" } },
     "small": { "$value": { "fontFamily": "Archivo", "fontWeight": 700, "fontSize": "24px", "lineHeight": "1.2", "letterSpacing": "0" } }
   },
   "label": {
+    "$type": "typography",
     "12": {
       "regular": { "$value": { "fontFamily": "Archivo", "fontWeight": 400, "fontSize": "12px", "lineHeight": "1.45", "letterSpacing": "0" } },
       "medium": { "$value": { "fontFamily": "Archivo", "fontWeight": 500, "fontSize": "12px", "lineHeight": "1.45", "letterSpacing": "0" } },
@@ -41,6 +43,7 @@
     }
   },
   "caption": {
+    "$type": "typography",
     "10": {
       "regular": { "$value": { "fontFamily": "Archivo", "fontWeight": 400, "fontSize": "10px", "lineHeight": "1.5", "letterSpacing": "0" } },
       "bold": { "$value": { "fontFamily": "Archivo", "fontWeight": 700, "fontSize": "10px", "lineHeight": "1.5", "letterSpacing": "0" } }

@@ -1,0 +1,421 @@
+{/*
+  Alert — página única do componente (o "one page" da vitrine).
+
+  ESTE ARQUIVO É O MOLDE de toda página de componente. A estrutura é sempre a
+  mesma, e está descrita em ./README.md:
+
+    hero  →  abas: Visão Geral · Regras de uso · Código · Acessibilidade
+
+  A troca de linguagem (Angular/Flutter) é um seletor DENTRO da aba Código —
+  não existe chave de plataforma na barra do Storybook, justamente para o
+  código mostrado e o texto lido nunca discordarem.
+
+  A INSTALAÇÃO do design system NÃO mora aqui: é assunto do DS inteiro, feita
+  uma vez por projeto, e vive em Fundação → Instalação.
+*/}
+
+import { Meta, Canvas, Controls, Source } from '@storybook/blocks';
+import * as AlertStories from './Alert.stories';
+import { ABAS_CSS } from '../vitrine/abas';
+import {
+  PASSO3_TS,
+  PASSO4_HTML,
+  PASSO5_HTML,
+  PASSO5_TS,
+  FLUTTER_EXEMPLO,
+} from './Alert.receita';
+
+<Meta of={AlertStories} />
+
+<style>{ABAS_CSS}</style>
+
+{/* ═══════════════════ HERO ═══════════════════ */}
+
+<div
+  className="sb-unstyled"
+  style={{
+    fontFamily: 'var(--familia-archivo), ui-sans-serif, system-ui, sans-serif',
+    background: 'var(--surface-secondary)',
+    border: '1px solid var(--border-primary)',
+    borderRadius: 16,
+    padding: '32px 36px',
+    marginBottom: 28,
+    color: 'var(--content-primary)',
+  }}
+>
+  <div
+    style={{
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: '.08em',
+      textTransform: 'uppercase',
+      color: 'var(--content-tertiary)',
+    }}
+  >
+    Rapidocs DS · Componente
+  </div>
+  <h1 style={{ margin: '10px 0 12px', fontSize: 40, lineHeight: 1.1, fontWeight: 700 }}>
+    Alert
+  </h1>
+  <div style={{ maxWidth: 660, fontSize: 15, lineHeight: 1.6, color: 'var(--content-secondary)' }}>
+    Faixa de mensagem de status: informa, avisa, confirma, acusa erro ou anuncia
+    novidade — com ícone, título, descrição, link de ação e botão de fechar
+    opcionais.
+  </div>
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 20 }}>
+    <span
+      style={{
+        fontSize: 12, fontWeight: 600, padding: '4px 12px', borderRadius: 999,
+        border: '1px solid var(--border-primary)', background: 'var(--surface-primary)',
+      }}
+    >
+      Angular (web)
+    </span>
+    <span
+      style={{
+        fontSize: 12, fontWeight: 600, padding: '4px 12px', borderRadius: 999,
+        border: '1px solid var(--border-primary)', background: 'var(--surface-primary)',
+      }}
+    >
+      Flutter (mobile)
+    </span>
+    <span style={{ fontSize: 12, padding: '4px 12px', color: 'var(--content-tertiary)' }}>
+      Origem: Figma · component set <em>alert-notification 1.0</em>
+    </span>
+  </div>
+</div>
+
+{/* ═══════════════════ ABAS ═══════════════════ */}
+
+<div className="rds-abas">
+
+<input type="radio" name="abas-alert" id="aba-visao" defaultChecked />
+<input type="radio" name="abas-alert" id="aba-regras" />
+<input type="radio" name="abas-alert" id="aba-codigo" />
+<input type="radio" name="abas-alert" id="aba-a11y" />
+
+<nav className="rds-abas__barra" aria-label="Seções da documentação do Alert">
+  <label htmlFor="aba-visao">Visão geral</label>
+  <label htmlFor="aba-regras">Regras de uso</label>
+  <label htmlFor="aba-codigo">Código</label>
+  <label htmlFor="aba-a11y">Acessibilidade</label>
+</nav>
+
+{/* ─────────── ABA 1: VISÃO GERAL ─────────── */}
+
+<div className="rds-abas__painel" data-aba="visao">
+
+## Playground
+
+Mexa nos controles abaixo do exemplo: status, tamanho, textos, o que aparece e o
+ícone. É o componente de verdade, com os tokens de verdade — a chave **Tema** na
+barra de cima troca claro/escuro sem nenhuma linha de código extra.
+
+<Canvas of={AlertStories.Playground} sourceState="none" />
+
+<Controls of={AlertStories.Playground} />
+
+## Variações
+
+### Os cinco status
+
+A cor e o ícone andam juntos: escolher o status é escolher os dois.
+
+<Canvas of={AlertStories.Status} sourceState="none" />
+
+### Dois tamanhos
+
+**Large** quando a mensagem precisa de contexto (título + descrição + link);
+**small** quando uma linha resolve.
+
+<Canvas of={AlertStories.Tamanhos} sourceState="none" />
+
+### Conteúdo opcional
+
+Descrição, link e botão de fechar são opcionais. Parte sem texto **não é
+desenhada** — nem o espaço dela. O último exemplo mostra a troca do ícone.
+
+<Canvas of={AlertStories.ConteudoOpcional} sourceState="none" />
+
+### Sem quem escute: desativado
+
+Se ninguém trata o evento, o controle aparece **desativado** em vez de fingir
+que funciona.
+
+<Canvas of={AlertStories.SemConsumidor} sourceState="none" />
+
+## Tokens que ele usa
+
+Tudo o que o Alert desenha vem daqui — mudou no Figma, mudou nas duas
+plataformas.
+
+| Parte do componente | Token |
+| --- | --- |
+| Fundo (info · warning · success · error) | `feedback/(status)/surface` |
+| Fundo (update) | `surface/secondary` |
+| Cor do ícone (info · warning · success · error) | `feedback/(status)/fill` |
+| Cor do ícone (update) e dos textos | `content/primary` |
+| Tipografia no large | `familia/archivo` + `tamanho/14` — `peso/bold` (título) · `peso/regular` (descrição) · `peso/semibold` (link) |
+| Tipografia no small | `familia/archivo` + `tamanho/12` — `peso/regular` (mensagem) · `peso/bold` (link) |
+| Caixa do ícone e do X | `component/20` (large) · `component/16` (small) |
+| Espaço interno e entre colunas | `padding/s` · `gap/s` (12px) |
+| Espaço entre título, descrição e link | `padding/3xs` (2px); no small, `padding/xs` (8px) |
+| Raio do container | `component/s` |
+| Hover do X | `action/hover/onColorSecondary` |
+| Anel de foco | `content/primary`, espessura e folga `component/3xs` (2px) |
+
+</div>
+
+{/* ─────────── ABA 2: REGRAS DE USO ─────────── */}
+
+<div className="rds-abas__painel" data-aba="regras">
+
+## Quando usar
+
+O Alert comunica **o resultado ou o estado de algo** dentro da tela onde a
+pessoa já está: um envio que deu certo, um dado que falta, um aviso de prazo.
+Ele não interrompe a navegação — fica na página, junto do conteúdo que ele
+comenta.
+
+<div className="rds-regras">
+  <div className="rds-regra rds-regra--faca">
+    <div className="rds-regra__titulo">✓ Faça</div>
+    <ul>
+      <li>Coloque o alerta <strong>perto do que ele comenta</strong> — no topo do formulário que falhou, não no rodapé da página.</li>
+      <li>Escreva a mensagem dizendo <strong>o que aconteceu e o que fazer</strong>: “Certificado vence em 7 dias. Renovar agora.”</li>
+      <li>Use <strong>um alerta por assunto</strong>. Dois alertas iguais empilhados viram ruído.</li>
+      <li>Se houver ação, use o <strong>link</strong> — é o caminho curto para resolver.</li>
+    </ul>
+  </div>
+  <div className="rds-regra rds-regra--evite">
+    <div className="rds-regra__titulo">✕ Evite</div>
+    <ul>
+      <li>Usar como <strong>modal ou confirmação</strong>: o Alert não bloqueia nem espera resposta.</li>
+      <li>Escrever <strong>só a cor</strong> como informação (“campo em vermelho”) — quem não distingue cor fica sem a mensagem.</li>
+      <li><strong>Empilhar vários</strong> alertas na mesma tela: escolha o mais importante.</li>
+      <li>Usar cores decorativas (<code>{'accent/*'}</code>) para status — status tem token próprio (<code>{'feedback/*'}</code>).</li>
+    </ul>
+  </div>
+</div>
+
+## Qual status escolher
+
+| Status | Use quando | Exemplo de mensagem |
+| --- | --- | --- |
+| **info** | é contexto neutro que a pessoa precisa saber | “Seus dados são atualizados a cada 24 horas.” |
+| **warning** | algo pede atenção **antes** de virar problema | “Certificado digital vence em 7 dias.” |
+| **success** | uma ação **terminou bem** | “Documento enviado com sucesso.” |
+| **error** | algo **falhou** e precisa de correção | “Não foi possível enviar. Verifique o CNPJ.” |
+| **update** | novidade, mudança de versão ou recurso novo | “Nova área de relatórios disponível.” |
+
+## Qual tamanho escolher
+
+- **Large** — a mensagem precisa de título, explicação e ação. É o padrão em
+  topo de página, formulários e telas de detalhe.
+- **Small** — cabe em uma linha e divide espaço com outro conteúdo: dentro de
+  cards, listas, tabelas e barras laterais.
+
+## Sobre o texto
+
+- Título curto e direto, **sem ponto final**; a descrição explica.
+- O link é um **verbo**: “Renovar”, “Ver detalhes”, “Tentar de novo” — nunca
+  “clique aqui”.
+- Se a mensagem não tem ação, não force um link só para preencher.
+
+<div className="rds-nota">
+
+**O botão de fechar não esconde o alerta sozinho.** Ele avisa a sua tela que a
+pessoa clicou; quem decide se o alerta sai (e se volta) é a aplicação. Isso é
+proposital: o DS não decide o fluxo do produto. A aba **Código** mostra como
+tratar.
+
+</div>
+
+</div>
+
+{/* ─────────── ABA 3: CÓDIGO ─────────── */}
+
+<div className="rds-abas__painel" data-aba="codigo">
+
+<div className="rds-nota">
+
+**Antes do primeiro componente:** instale o design system uma vez no seu projeto
+— pacote, tokens e fonte. A receita está em **Fundação → Instalação**. Os
+trechos abaixo assumem que isso já foi feito.
+
+</div>
+
+<div className="rds-langs">
+
+<input type="radio" name="langs-alert" id="lang-angular" defaultChecked />
+<input type="radio" name="langs-alert" id="lang-flutter" />
+
+<nav className="rds-langs__barra" aria-label="Linguagem do código">
+  <label htmlFor="lang-angular">Angular · web</label>
+  <label htmlFor="lang-flutter">Flutter · mobile</label>
+</nav>
+
+{/* ---- Angular ---- */}
+
+<div className="rds-langs__painel" data-lang="angular">
+
+### 1. Importar o componente
+
+Sempre pelo nome do pacote (nunca por caminho interno — ele muda entre versões).
+Os componentes são *standalone*: entram direto no `imports`, sem NgModule.
+
+<Source language="typescript" code={PASSO3_TS} dark />
+
+### 2. Usar na tela
+
+<Source language="html" code={PASSO4_HTML} dark />
+
+### 3. Tratar os eventos
+
+O componente **não se esconde sozinho**: ele emite `(dismiss)` quando o X é
+clicado e `(linkClick)` no link. Quem decide o que acontece é a sua tela.
+
+<Source language="html" code={PASSO5_HTML} dark />
+
+<Source language="typescript" code={PASSO5_TS} dark />
+
+### Propriedades
+
+Transcrito de `alert.component.ts` — é o contrato real, nada resumido.
+
+| `@Input` | Tipo | Padrão | O que faz |
+| --- | --- | --- | --- |
+| `status` | `info` · `warning` · `success` · `error` · `update` | `info` | Cor de fundo e ícone. No Figma é a propriedade **Status**. |
+| `size` | `large` · `small` | `large` | `large` = título + descrição + link empilhados; `small` = uma linha. |
+| `title` | texto | `''` | Título (no `large`) ou a mensagem inteira (no `small`). |
+| `body` | texto | `''` | Descrição. Só no `large`, e só quando tem texto. |
+| `linkText` | texto | `'Link'` | Texto do link. Vazio = link não desenhado. |
+| `linkHref` | texto | `'#'` | Destino. No padrão `'#'` o clique **não navega** (só dispara o evento); com destino real, navega. |
+| `showBody` | `true` · `false` | `true` | Liga/desliga a descrição (**Show Body?** no Figma). |
+| `showLink` | `true` · `false` | `true` | Liga/desliga o link (**Show Link?** no Figma). |
+| `dismissible` | `true` · `false` | `true` | Mostra o botão de fechar (**Show Close BTN** no Figma). |
+| `icon` | SVG em texto · `null` | `null` | Troca o ícone do status (o *instance swap* do Figma). Injetado **sem sanitização** — só SVG confiável. |
+
+| `@Output` | Payload | Quando dispara |
+| --- | --- | --- |
+| `(dismiss)` | — | Clique no X. Sem ninguém escutando, o X fica **desativado** e fora do Tab. |
+| `(linkClick)` | `Event` | Clique no link. Sem destino real **e** sem ninguém escutando, o link fica **desativado** e fora do Tab. |
+
+O pacote também exporta `type AlertStatus`, `type AlertSize`, `ALERT_ICONS` (os
+SVGs dos cinco status) e `ALERT_CLOSE_ICON`.
+
+</div>
+
+{/* ---- Flutter ---- */}
+
+<div className="rds-langs__painel" data-lang="flutter">
+
+### Como fica no app
+
+<Canvas of={AlertStories.PreviaApp} sourceState="none" />
+
+### 1. Importar e usar
+
+Um import só, do pacote inteiro — o `RdsAlert` é o par do `<rds-alert>`, gerado
+do mesmo Figma e lendo os mesmos tokens.
+
+<Source language="dart" code={FLUTTER_EXEMPLO} dark />
+
+### 2. Tratar os eventos
+
+Mesma regra da web: `onDismiss` avisa que o X foi tocado e `onLinkTap` que o
+link foi tocado — quem tira o alerta da tela é a sua tela (um `setState`, um
+bloc, o que você usar). Sem callback, o controle aparece **desativado**.
+
+### Parâmetros
+
+Transcrito de `rds_alert.dart`.
+
+| Parâmetro | Tipo | Padrão | O que faz |
+| --- | --- | --- | --- |
+| `title` | `String` | **obrigatório** | Título (no large) ou a mensagem inteira (no small). |
+| `body` | `String?` | `null` | Descrição. Só no large, e só quando tem texto. |
+| `linkText` | `String` | `'Link'` | Texto do link. Vazio = link não desenhado. |
+| `status` | `RdsAlertStatus` | `.info` | `.info` · `.warning` · `.success` · `.error` · `.update` |
+| `size` | `RdsAlertSize` | `.large` | `.large` · `.small` |
+| `showBody` | `bool` | `true` | Liga/desliga a descrição. |
+| `showLink` | `bool` | `true` | Liga/desliga o link. |
+| `dismissible` | `bool` | `true` | Mostra o botão de fechar. |
+| `icon` | `Widget?` | `null` | Troca o ícone do status (equivale ao `icon` da web). |
+| `onLinkTap` | `VoidCallback?` | `null` | Toque no link. Sem callback, o link fica **desativado**. |
+| `onDismiss` | `VoidCallback?` | `null` | Toque no X. Sem callback, o X fica **desativado**. |
+
+<div className="rds-nota">
+
+**Tema escuro:** as cores são resolvidas pelo `Theme.of(context).brightness`, e
+saem dos mesmos tokens do Figma — não há cor escrita no widget.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{/* ─────────── ABA 4: ACESSIBILIDADE ─────────── */}
+
+<div className="rds-abas__painel" data-aba="a11y">
+
+## O que já vem resolvido
+
+Estes comportamentos são do componente — você não precisa configurar nada.
+
+- **Anúncio automático** — o container tem `role="alert"` (web) e
+  `Semantics(liveRegion: true)` (Flutter): o leitor de tela fala a mensagem
+  assim que ela aparece, sem a pessoa ter que procurar.
+- **Foco visível de verdade** — o anel do link e do X usa `content/primary`
+  (2px de espessura, 2px de folga). O token de foco do Figma
+  (`action/focusRing/neutral`) foi **descartado de propósito**: sobre os fundos
+  dos alertas ele rende 1,73:1 de contraste, abaixo do mínimo de 3:1 da WCAG
+  2.4.11. O `content/primary` mede de 8,86:1 a 18,44:1 nos cinco status × dois
+  temas.
+- **Alvo de toque ampliado** — o desenho do X segue o Figma (20px no large,
+  16px no small), mas a área clicável cresce para **44px / 40px** por fora do
+  fluxo, sem mexer em nenhum espaçamento. O anel de foco e o hover desenham em
+  volta da **caixa do ícone**; o alvo grande é invisível e serve só para o dedo.
+- **Sem quem escute = desativado** — X sem `(dismiss)` e link sem destino nem
+  `(linkClick)` são anunciados como desativados e saem da ordem de Tab, em vez
+  de fingir que funcionam.
+- **Link se anuncia como link** — só é desenhado quando tem texto (link vazio
+  entraria no Tab sem nome acessível — WCAG 2.4.4 e 4.1.2) e sublinha no hover
+  **e** no foco.
+- **Ícone decorativo** — leva `aria-hidden="true"`: a informação está no texto,
+  não na cor nem no desenho.
+
+## O que depende de você
+
+- **Escreva a mensagem completa no texto.** A cor e o ícone reforçam, não
+  informam: quem usa leitor de tela ou não distingue cores recebe só o texto.
+- **Não remova o alerta sozinho por tempo.** Se precisar de desaparecimento
+  automático, garanta que a informação exista em outro lugar — quem usa leitor
+  de tela pode não chegar a tempo.
+- **Um link com verbo claro.** “Renovar” diz o destino; “clique aqui” não.
+
+<div className="rds-nota">
+
+**Contraste do ícone:** em alguns status o ícone fica abaixo de 3:1 contra o
+próprio fundo (warning 1,81:1 · success 2,22:1). Os dois valores vêm do Figma
+(`feedback/(status)/fill` sobre `feedback/(status)/surface`) e estão registrados
+como dívida da **fundação** — o texto do alerta, que carrega a informação, passa
+com folga (16,9:1 a 18,4:1 no claro).
+
+</div>
+
+</div>
+
+</div>
+
+{/* ═══════════════════ RODAPÉ ═══════════════════ */}
+
+---
+
+**Onde vive o código:** Angular em `components/angular/alert/` (porta de entrada
+`public-api.ts`) · Flutter em `components/flutter/lib/src/alert/rds_alert.dart`
+(porta de entrada `lib/rapidocs_ds.dart`) · tokens gerados do Figma por Style
+Dictionary em `tokens/`.
